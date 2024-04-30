@@ -1,0 +1,34 @@
+{
+  "type": "custom_python",
+  "name": "check_challenger_deployment_status",
+  "active": false,
+  "runAsUser": "cassandra.chuljian@dataiku.com",
+  "creationTag": {
+    "versionNumber": 0,
+    "lastModifiedBy": {
+      "login": "cassandra.chuljian@dataiku.com"
+    },
+    "lastModifiedOn": 1714506994431,
+    "extendedProperties": {}
+  },
+  "checklists": {
+    "checklists": []
+  },
+  "delayedTriggersBehavior": {
+    "delayWhileRunning": true,
+    "squashDelayedTriggers": true,
+    "suppressTriggersWhileRunning": true
+  },
+  "tags": [
+    "helper_scenario"
+  ],
+  "triggers": [],
+  "reporters": [],
+  "params": {
+    "envSelection": {
+      "envMode": "INHERIT"
+    }
+  },
+  "automationLocal": false,
+  "customFields": {}
+}
