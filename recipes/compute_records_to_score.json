@@ -1,0 +1,111 @@
+{
+  "type": "sampling",
+  "neverRecomputeExistingPartitions": false,
+  "optionalDependencies": false,
+  "params": {
+    "selection": {
+      "useMemTable": false,
+      "filter": {
+        "distinct": false,
+        "enabled": false
+      },
+      "partitionSelectionMethod": "ALL",
+      "latestPartitionsN": 1,
+      "ordering": {
+        "enabled": false,
+        "rules": []
+      },
+      "samplingMethod": "HEAD_SEQUENTIAL",
+      "maxRecords": 5000,
+      "targetRatio": 0.02,
+      "ascending": true,
+      "withinFirstN": -1,
+      "maxReadUncompressedBytes": -1,
+      "seed": 1337
+    },
+    "engineParams": {
+      "dssEngineMaxThreads": 4,
+      "sparkSQL": {
+        "overwriteOutputSchema": false,
+        "useGlobalMetastore": false,
+        "readParams": {
+          "mode": "AUTO",
+          "autoModeRepartitionInto": 10,
+          "map": {}
+        },
+        "sparkConfig": {
+          "inheritConf": "default",
+          "conf": []
+        },
+        "executionEngine": "SPARK_SUBMIT",
+        "pipelineAllowStart": true,
+        "pipelineAllowMerge": true,
+        "skipPrerunValidate": false
+      },
+      "impala": {
+        "forceStreamMode": true
+      },
+      "hive": {
+        "inheritConf": "default",
+        "hiveconf": [],
+        "executionEngine": "HIVESERVER2",
+        "addDkuUdf": false,
+        "skipPrerunValidate": false
+      },
+      "sqlPipelineParams": {
+        "pipelineAllowStart": true,
+        "pipelineAllowMerge": true
+      },
+      "lowerCaseSchemaIfEngineRequiresIt": false
+    }
+  },
+  "customMeta": {
+    "kv": {}
+  },
+  "redispatchPartitioning": false,
+  "maxRunningActivities": 0,
+  "variables": {},
+  "dkuProperties": [],
+  "inputs": {
+    "main": {
+      "items": [
+        {
+          "ref": "dataiku_input_prepared",
+          "deps": []
+        }
+      ]
+    }
+  },
+  "outputs": {
+    "main": {
+      "items": [
+        {
+          "ref": "daily_records",
+          "appendMode": false
+        }
+      ]
+    }
+  },
+  "labels": [],
+  "versionTag": {
+    "versionNumber": 3,
+    "lastModifiedBy": {
+      "login": "pierre.petrella"
+    },
+    "lastModifiedOn": 1702478848963,
+    "extendedProperties": {}
+  },
+  "creationTag": {
+    "versionNumber": 0,
+    "lastModifiedBy": {
+      "login": "pierre.petrella"
+    },
+    "lastModifiedOn": 1700495928958,
+    "extendedProperties": {}
+  },
+  "tags": [],
+  "customFields": {},
+  "checklists": {
+    "checklists": []
+  }
+}

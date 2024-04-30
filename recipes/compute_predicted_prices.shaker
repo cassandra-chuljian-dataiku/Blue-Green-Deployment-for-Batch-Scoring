@@ -1,0 +1,538 @@
+{
+  "columnsSelection": {
+    "mode": "ALL"
+  },
+  "explorationSampling": {
+    "_refreshTrigger": 0,
+    "selection": {
+      "latestPartitionsN": 1,
+      "maxRecords": 10000,
+      "maxRecordsForDisplay": -1,
+      "ordering": {
+        "rules": [],
+        "enabled": false
+      },
+      "withinFirstN": -1,
+      "maxStoredBytes": 104857600,
+      "ascending": true,
+      "timeout": -1,
+      "filter": {
+        "distinct": false,
+        "enabled": false
+      },
+      "partitionSelectionMethod": "ALL",
+      "targetRatio": 0.02,
+      "maxReadUncompressedBytes": -1,
+      "samplingMethod": "HEAD_SEQUENTIAL"
+    },
+    "autoRefreshSample": false
+  },
+  "explorationFilters": [],
+  "columnUseScientificNotationByName": {},
+  "origin": "PREPARE_RECIPE",
+  "exploreUIParams": {
+    "autoRefresh": true
+  },
+  "steps": [
+    {
+      "preview": false,
+      "name": "Load variables",
+      "metaType": "GROUP",
+      "disabled": false,
+      "steps": [
+        {
+          "preview": false,
+          "metaType": "PROCESSOR",
+          "disabled": false,
+          "type": "CreateColumnWithGREL",
+          "params": {
+            "expression": "variables[\"CHALLENGER_MODEL\"]",
+            "column": "challenger_model"
+          },
+          "alwaysShowComment": false
+        },
+        {
+          "preview": false,
+          "metaType": "PROCESSOR",
+          "disabled": false,
+          "type": "CreateColumnWithGREL",
+          "params": {
+            "expression": "round(variables[\"CHALLENGER_SPLIT\"])",
+            "column": "challenger_split"
+          },
+          "alwaysShowComment": false
+        },
+        {
+          "preview": false,
+          "metaType": "PROCESSOR",
+          "disabled": false,
+          "type": "CreateColumnWithGREL",
+          "params": {
+            "expression": "variables[\"MODEL_STATUS\"]",
+            "column": "model_status"
+          },
+          "alwaysShowComment": false
+        },
+        {
+          "preview": false,
+          "metaType": "PROCESSOR",
+          "disabled": false,
+          "type": "VisualIfRule",
+          "params": {
+            "legacyPositioning": false,
+            "visualIfDesc": {
+              "elseIfThens": [
+                {
+                  "filter": {
+                    "uiData": {
+                      "mode": "\u0026\u0026",
+                      "conditions": [
+                        {
+                          "input": "challenger_model",
+                          "col": "TRANSACTION_TIME",
+                          "string": "GREEN",
+                          "num": 0.0,
+                          "items": [],
+                          "operator": "\u003d\u003d [string]"
+                        }
+                      ]
+                    },
+                    "distinct": true,
+                    "enabled": true
+                  },
+                  "actions": [
+                    {
+                      "outputColumnName": "champion_model",
+                      "column": "TRANSACTION_DATE",
+                      "formula": "",
+                      "value": "BLUE",
+                      "operator": "ASSIGN_VALUE"
+                    }
+                  ]
+                }
+              ],
+              "elseActions": [
+                {
+                  "outputColumnName": "challenger_model",
+                  "column": "TRANSACTION_DATE",
+                  "formula": "",
+                  "value": "ERROR",
+                  "operator": "ASSIGN_VALUE"
+                }
+              ],
+              "ifThen": {
+                "filter": {
+                  "uiData": {
+                    "mode": "\u0026\u0026",
+                    "conditions": [
+                      {
+                        "input": "challenger_model",
+                        "col": "TRANSACTION_TIME",
+                        "string": "BLUE",
+                        "num": 0.0,
+                        "items": [],
+                        "operator": "\u003d\u003d [string]"
+                      }
+                    ]
+                  },
+                  "distinct": true,
+                  "enabled": true
+                },
+                "actions": [
+                  {
+                    "outputColumnName": "champion_model",
+                    "column": "TRANSACTION_DATE",
+                    "formula": "",
+                    "value": "GREEN",
+                    "operator": "ASSIGN_VALUE"
+                  }
+                ]
+              }
+            }
+          },
+          "alwaysShowComment": false
+        }
+      ],
+      "alwaysShowComment": false
+    },
+    {
+      "preview": false,
+      "name": "Set challenger/champion predictions",
+      "metaType": "GROUP",
+      "disabled": false,
+      "steps": [
+        {
+          "preview": false,
+          "metaType": "PROCESSOR",
+          "disabled": false,
+          "type": "CreateColumnWithGREL",
+          "params": {
+            "expression": "val(\n\tconcat(challenger_model, \"_prediction\")\n)",
+            "column": "challenger_prediction"
+          },
+          "alwaysShowComment": false
+        },
+        {
+          "preview": false,
+          "metaType": "PROCESSOR",
+          "disabled": false,
+          "type": "CreateColumnWithGREL",
+          "params": {
+            "expression": "val(\n\tconcat(champion_model, \"_prediction\")\n)",
+            "column": "champion_prediction"
+          },
+          "alwaysShowComment": false
+        }
+      ],
+      "alwaysShowComment": false
+    },
+    {
+      "preview": false,
+      "metaType": "PROCESSOR",
+      "disabled": false,
+      "type": "VisualIfRule",
+      "params": {
+        "legacyPositioning": false,
+        "visualIfDesc": {
+          "elseIfThens": [
+            {
+              "filter": {
+                "uiData": {
+                  "mode": "\u0026\u0026",
+                  "conditions": [
+                    {
+                      "input": "challenger_split",
+                      "col": "TRANSACTION_TIME",
+                      "num": 10.0,
+                      "items": [],
+                      "operator": "\u003d\u003d [number]"
+                    }
+                  ]
+                },
+                "distinct": true,
+                "enabled": true
+              },
+              "actions": [
+                {
+                  "outputColumnName": "split_strategy",
+                  "column": "10_90_split",
+                  "formula": "",
+                  "value": "",
+                  "operator": "ASSIGN_COLUMN"
+                }
+              ]
+            },
+            {
+              "filter": {
+                "uiData": {
+                  "mode": "\u0026\u0026",
+                  "conditions": [
+                    {
+                      "input": "challenger_split",
+                      "col": "TRANSACTION_TIME",
+                      "string": "50",
+                      "num": 50.0,
+                      "items": [],
+                      "operator": "\u003d\u003d [number]"
+                    }
+                  ]
+                },
+                "distinct": true,
+                "enabled": true
+              },
+              "actions": [
+                {
+                  "outputColumnName": "split_strategy",
+                  "column": "50_50_split",
+                  "formula": "",
+                  "value": "50",
+                  "operator": "ASSIGN_COLUMN"
+                }
+              ]
+            }
+          ],
+          "elseActions": [],
+          "ifThen": {
+            "filter": {
+              "uiData": {
+                "mode": "\u0026\u0026",
+                "conditions": [
+                  {
+                    "input": "challenger_split",
+                    "col": "TRANSACTION_TIME",
+                    "num": 0.0,
+                    "items": [],
+                    "operator": "\u003d\u003d [number]"
+                  }
+                ]
+              },
+              "distinct": true,
+              "enabled": true
+            },
+            "actions": [
+              {
+                "outputColumnName": "split_strategy",
+                "column": "TRANSACTION_DATE",
+                "formula": "",
+                "value": "CHAMPION",
+                "operator": "ASSIGN_VALUE"
+              }
+            ]
+          }
+        }
+      },
+      "alwaysShowComment": false
+    },
+    {
+      "preview": false,
+      "metaType": "PROCESSOR",
+      "disabled": false,
+      "type": "VisualIfRule",
+      "params": {
+        "legacyPositioning": false,
+        "visualIfDesc": {
+          "elseIfThens": [
+            {
+              "filter": {
+                "uiData": {
+                  "mode": "\u0026\u0026",
+                  "conditions": [
+                    {
+                      "input": "split_strategy",
+                      "col": "TRANSACTION_TIME",
+                      "string": "CHAMPION",
+                      "num": 0.0,
+                      "items": [],
+                      "operator": "\u003d\u003d [string]"
+                    }
+                  ]
+                },
+                "distinct": true,
+                "enabled": true
+              },
+              "actions": [
+                {
+                  "outputColumnName": "prediction",
+                  "column": "challenger_prediction",
+                  "formula": "",
+                  "value": "cham",
+                  "operator": "ASSIGN_COLUMN"
+                }
+              ]
+            }
+          ],
+          "elseActions": [
+            {
+              "outputColumnName": "prediction",
+              "column": "TRANSACTION_DATE",
+              "formula": "",
+              "value": "SPLIT STRATEGY ERROR",
+              "operator": "ASSIGN_VALUE"
+            }
+          ],
+          "ifThen": {
+            "filter": {
+              "uiData": {
+                "mode": "\u0026\u0026",
+                "conditions": [
+                  {
+                    "input": "split_strategy",
+                    "col": "TRANSACTION_TIME",
+                    "string": "CHALLENGER",
+                    "num": 0.0,
+                    "items": [],
+                    "operator": "\u003d\u003d [string]"
+                  }
+                ]
+              },
+              "distinct": true,
+              "enabled": true
+            },
+            "actions": [
+              {
+                "outputColumnName": "prediction",
+                "column": "challenger_prediction",
+                "formula": "",
+                "value": "",
+                "operator": "ASSIGN_COLUMN"
+              }
+            ]
+          }
+        }
+      },
+      "alwaysShowComment": false
+    },
+    {
+      "preview": false,
+      "name": "Price \u0026 Predicted Price calculation",
+      "metaType": "GROUP",
+      "disabled": false,
+      "steps": [
+        {
+          "preview": false,
+          "metaType": "PROCESSOR",
+          "disabled": false,
+          "type": "CreateColumnWithGREL",
+          "params": {
+            "expression": "((RANKMAX_PRICE - RANK1_PRICE) * (prediction - 1) / (RANKMAX_PRICE - 1)) + RANK1_PRICE",
+            "column": "predicted_price"
+          },
+          "alwaysShowComment": false
+        },
+        {
+          "preview": false,
+          "metaType": "PROCESSOR",
+          "disabled": false,
+          "type": "CreateColumnWithGREL",
+          "params": {
+            "expression": "((RANKMAX_PRICE - RANK1_PRICE) * (PRICE_RANK - 1) / (RANKMAX_PRICE - 1)) + RANK1_PRICE",
+            "column": "gt_price"
+          },
+          "alwaysShowComment": false
+        }
+      ],
+      "alwaysShowComment": false
+    }
+  ],
+  "maxProcessedMemTableBytes": -1,
+  "previewMode": "ALL_ROWS",
+  "vizSampling": {
+    "_refreshTrigger": 0,
+    "selection": {
+      "useMemTable": false,
+      "filter": {
+        "distinct": false,
+        "enabled": false
+      },
+      "latestPartitionsN": 1,
+      "maxRecords": -1,
+      "ordering": {
+        "rules": [],
+        "enabled": false
+      },
+      "withinFirstN": -1,
+      "partitionSelectionMethod": "ALL",
+      "targetRatio": 0.02,
+      "maxReadUncompressedBytes": -1,
+      "samplingMethod": "FULL",
+      "ascending": true
+    },
+    "autoRefreshSample": false
+  },
+  "analysisColumnData": {},
+  "columnWidthsByName": {
+    "decile_group": 105,
+    "ROUTE_CATEGORY": 120,
+    "FLIGHT_PRODUCT_KEY": 150,
+    "XLG_SEAT_COUNT": 134,
+    "gt_price": 141,
+    "champion_model": 120,
+    "RANKMAX_PRICE": 113,
+    "split_strategy": 120,
+    "DESTINATION_LATITUDE": 165,
+    "ID": 100,
+    "TRAVELDURATION": 134,
+    "GREEN_smmd_modelVersion": 211,
+    "LEAD_TIME_DAYS": 134,
+    "CAPACITY": 134,
+    "GREEN_smmd_fullModelId": 300,
+    "BLUE_proba_8": 162,
+    "BLUE_proba_9": 162,
+    "RECENT_REVENUE": 134,
+    "REVENUE_TYPE_DETAIL": 158,
+    "RETAILREVENUE_ACCUMULATED": 203,
+    "4": 100,
+    "CHANNEL": 100,
+    "RETAILTYPEREVENUE_ACCUMULATED": 233,
+    "GROSSTICKETREVENUE_ACCUMULATED": 240,
+    "DESTINATION_COUNTRY": 158,
+    "REVENUE_TYPE": 105,
+    "NET_PRODUCT_COUNT": 143,
+    "DEPARTUREDOW": 134,
+    "DESTINATION_LONGITUDE": 173,
+    "INITIAL_PARTY_TYPE": 150,
+    "DEPARTUREMONTH": 134,
+    "GREEN_prediction": 135,
+    "BLUE_smmd_savedModelId": 180,
+    "DATE_parsed": 183,
+    "50_50_split": 127,
+    "challenger_split": 135,
+    "SEASON": 100,
+    "model_status": 134,
+    "BLUE_*": 100,
+    "BLUE_prediction": 128,
+    "FLIGHT_BOOKING_REFERENCE": 195,
+    "GREEN_smmd_savedModelId": 188,
+    "BLUE_proba_10": 162,
+    "PRODUCT_TYPE_DESCRIPTION": 195,
+    "split_method": 105,
+    "XLG_LOAD_FACTOR": 134,
+    "BLUE_smmd_predictionTime": 218,
+    "split": 100,
+    "proba_10": 162,
+    "challenger_model": 135,
+    "RANK1_PRICE": 100,
+    "LOAD_FACTOR": 134,
+    "GREEN_proba_1": 162,
+    "GREEN_proba_10": 162,
+    "PRICE": 134,
+    "GREEN_proba_6": 162,
+    "REVENUE": 134,
+    "GREEN_proba_5": 162,
+    "GREEN_proba_4": 162,
+    "DESTINATION_MEMPHISREGION": 203,
+    "GREEN_proba_3": 162,
+    "BLUE_smmd_modelVersion": 204,
+    "PROFIT_PER_PASSENGERS": 173,
+    "GREEN_proba_9": 162,
+    "GREEN_proba_8": 162,
+    "GREEN_proba_7": 162,
+    "predicted price": 155,
+    "PRODUCTGROUPNAME": 135,
+    "DATE": 148,
+    "REMAINING_SEATS": 134,
+    "prediction": 100,
+    "ROUTE_LENGTH_KM": 134,
+    "BLUE_smmd_fullModelId": 300,
+    "challenger_prediction": 173,
+    "SEASON_TYPE": 100,
+    "BASE": 100,
+    "ONEWAYFLAG": 100,
+    "FLIGHT_ONLY_TRANSACTION_KEY": 218,
+    "proba_1": 162,
+    "predicted_price": 155,
+    "TRANSACTION_TIME": 135,
+    "BLUE_proba_3": 162,
+    "BLUE_proba_1": 162,
+    "BLUE_proba_6": 162,
+    "BLUE_proba_7": 162,
+    "BLUE_proba_4": 162,
+    "BLUE_proba_5": 162,
+    "TRANSACTION_DATE": 183,
+    "DURATION_BANDED": 128,
+    "TRANSACTION_DESCRIPTION": 188,
+    "DIRECTION": 113,
+    "proba_7": 162,
+    "proba_8": 162,
+    "proba_9": 162,
+    "proba_3": 162,
+    "proba_4": 162,
+    "proba_5": 162,
+    "proba_6": 162,
+    "PPPratio": 134,
+    "champion_prediction": 158,
+    "10_90_split": 127,
+    "DESTINATION": 100,
+    "PRICE_RANK": 100,
+    "PASSENGERS_ACCUMULATED": 180,
+    "BOOKING_TYPE_GROUP": 150,
+    "GREEN_smmd_predictionTime": 225
+  },
+  "sorting": [],
+  "globalSearchQuery": "",
+  "coloring": {
+    "scheme": "MEANING_AND_STATUS",
+    "individualColumns": [],
+    "valueColoringMode": "HASH"
+  }
+}

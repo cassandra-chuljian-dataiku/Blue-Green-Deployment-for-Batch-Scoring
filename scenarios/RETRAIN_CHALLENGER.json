@@ -1,0 +1,47 @@
+{
+  "type": "custom_python",
+  "name": "retrain_challenger",
+  "active": false,
+  "runAsUser": "cassandra.chuljian@dataiku.com",
+  "checklists": {
+    "checklists": []
+  },
+  "delayedTriggersBehavior": {
+    "delayWhileRunning": true,
+    "squashDelayedTriggers": true,
+    "suppressTriggersWhileRunning": true
+  },
+  "tags": [
+    "time_based"
+  ],
+  "triggers": [
+    {
+      "id": "DYE7qVVC",
+      "type": "temporal",
+      "name": "Periodic Retraining",
+      "delay": 5,
+      "active": true,
+      "params": {
+        "repeatFrequency": 3,
+        "frequency": "Monthly",
+        "startingFrom": "2023-11-06",
+        "daysOfWeek": [
+          "Wednesday"
+        ],
+        "monthlyRunOn": "FIRST_WEEK",
+        "minute": 0,
+        "hour": 8,
+        "timezone": "SERVER",
+        "lastUpdate": 1702975529548
+      }
+    }
+  ],
+  "reporters": [],
+  "params": {
+    "envSelection": {
+      "envMode": "INHERIT"
+    }
+  },
+  "automationLocal": false,
+  "customFields": {}
+}

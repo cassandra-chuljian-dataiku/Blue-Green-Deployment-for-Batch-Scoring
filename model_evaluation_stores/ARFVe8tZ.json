@@ -1,0 +1,168 @@
+{
+    "rebuildBehavior": "EXPLICIT",
+    "name": "BLUE_PRICE_RANK_EVAL",
+    "metrics": {
+        "probes": [],
+        "engineConfig": {
+            "padRunsWithMetrics": false,
+            "hive": {
+                "active": true,
+                "extraConf": []
+            },
+            "basic": {},
+            "dss": {
+                "active": true,
+                "selection": {
+                    "useMemTable": false,
+                    "filter": {
+                        "distinct": false,
+                        "enabled": false
+                    },
+                    "partitionSelectionMethod": "ALL",
+                    "latestPartitionsN": 1,
+                    "ordering": {
+                        "enabled": false,
+                        "rules": []
+                    },
+                    "samplingMethod": "FULL",
+                    "maxRecords": -1,
+                    "targetRatio": 0.02,
+                    "ascending": true,
+                    "withinFirstN": -1,
+                    "maxReadUncompressedBytes": -1
+                }
+            },
+            "sql": {
+                "active": true
+            },
+            "impala": {
+                "active": true
+            },
+            "spark": {
+                "active": true,
+                "extraConf": []
+            },
+            "python": {}
+        },
+        "displayedState": {
+            "partition": "NP",
+            "columns": [],
+            "metrics": []
+        }
+    },
+    "metricsChecks": {
+        "runOnBuild": false,
+        "checks": [
+            {
+                "metricId": "model_perf:DATA_DRIFT_PVALUE",
+                "minimum": 0.01,
+                "maximum": 0.0,
+                "softMinimum": 0.05,
+                "softMaximum": 0.0,
+                "minimumEnabled": true,
+                "maximumEnabled": false,
+                "softMinimumEnabled": true,
+                "softMaximumEnabled": false,
+                "type": "numericRange",
+                "meta": {
+                    "name": "Value in range",
+                    "label": ""
+                },
+                "computeOnBuildMode": "PARTITION"
+            },
+            {
+                "metricId": "model_perf:AUC",
+                "minimum": 0.0,
+                "maximum": 0.0,
+                "softMinimum": 0.8,
+                "softMaximum": 0.0,
+                "minimumEnabled": false,
+                "maximumEnabled": false,
+                "softMinimumEnabled": true,
+                "softMaximumEnabled": false,
+                "type": "numericRange",
+                "meta": {
+                    "name": "Value in range"
+                },
+                "computeOnBuildMode": "PARTITION"
+            }
+        ],
+        "displayedState": {
+            "partition": "NP",
+            "checks": [
+                "Value in range of AUC",
+                "Value in range of Data Drift p-value",
+                "Data drift detection"
+            ]
+        }
+    },
+    "flowOptions": {
+        "virtualizable": false,
+        "rebuildBehavior": "NORMAL",
+        "crossProjectBuildBehavior": "DEFAULT"
+    },
+    "partitioning": {
+        "ignoreNonMatchingFile": false,
+        "considerMissingRequestedPartitionsAsEmpty": false,
+        "dimensions": []
+    },
+    "displayParams": {
+        "displayedMetrics": [
+            "ACCURACY",
+            "PRECISION",
+            "RECALL",
+            "F1",
+            "LOG_LOSS",
+            "ROC_AUC",
+            "AVERAGE_PRECISION",
+            "CALIBRATION_LOSS",
+            "DATA_DRIFT",
+            "DATA_DRIFT_PVALUE",
+            "MIN_KS",
+            "MIN_CHISQUARE",
+            "MAX_PSI",
+            "PREDICTION_DRIFT_PSI",
+            "PREDICTION_DRIFT_CHISQUARE"
+        ],
+        "predictionType": "MULTICLASS",
+        "pinnedMetrics": [],
+        "xLabel": "evaluation:date",
+        "yLabels": [
+            "model:name",
+            "evaluationDataset:dataset-name"
+        ],
+        "alsoDisplayedLabels": [],
+        "barLabels": [
+            "evaluation:date",
+            "model:name",
+            "evaluationDataset:dataset-name"
+        ],
+        "graphStyle": "LINE",
+        "sortColumn": "refStr",
+        "sortDescending": false,
+        "showConfidenceIntervals": true,
+        "disabledMERunIds": []
+    },
+    "governSyncOptOut": false,
+    "versionTag": {
+        "versionNumber": 26,
+        "lastModifiedBy": {
+            "login": "pierre.petrella"
+        },
+        "lastModifiedOn": 1702894216447,
+        "extendedProperties": {}
+    },
+    "creationTag": {
+        "versionNumber": 0,
+        "lastModifiedBy": {
+            "login": "pierre.petrella"
+        },
+        "lastModifiedOn": 1700496191387,
+        "extendedProperties": {}
+    },
+    "tags": [],
+    "customFields": {},
+    "checklists": {
+        "checklists": []
+    }
+}

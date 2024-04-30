@@ -1,0 +1,222 @@
+{
+  "type": "Filesystem",
+  "managed": true,
+  "featureGroup": false,
+  "formatType": "csv",
+  "checklists": {
+    "checklists": []
+  },
+  "checks": [],
+  "customMeta": {
+    "kv": {}
+  },
+  "flowOptions": {
+    "virtualizable": false,
+    "rebuildBehavior": "NORMAL",
+    "crossProjectBuildBehavior": "DEFAULT"
+  },
+  "readWriteOptions": {
+    "preserveOrder": false,
+    "writeBuckets": 1,
+    "forceSingleOutputFile": false,
+    "defaultReadOrdering": {
+      "enabled": false,
+      "rules": []
+    }
+  },
+  "formatParams": {
+    "style": "unix",
+    "charset": "utf8",
+    "separator": "\t",
+    "quoteChar": "\"",
+    "escapeChar": "\\",
+    "maxRowChars": 100000000,
+    "dateSerializationFormat": "ISO",
+    "arrayMapFormat": "json",
+    "hiveSeparators": [
+      "\u0002",
+      "\u0003",
+      "\u0004",
+      "\u0005",
+      "\u0006",
+      "\u0007",
+      "\b"
+    ],
+    "skipRowsBeforeHeader": 0,
+    "parseHeaderRow": false,
+    "skipRowsAfterHeader": 0,
+    "probableNumberOfRecords": 0,
+    "normalizeBooleans": false,
+    "normalizeDoubles": true,
+    "readAdditionalColumnsBehavior": "INSERT_IN_DATA_WARNING",
+    "readMissingColumnsBehavior": "DISCARD_SILENT",
+    "readDataTypeMismatchBehavior": "DISCARD_WARNING",
+    "writeDataTypeMismatchBehavior": "DISCARD_WARNING",
+    "fileReadFailureBehavior": "FAIL",
+    "compress": "gz"
+  },
+  "partitioning": {
+    "ignoreNonMatchingFile": false,
+    "considerMissingRequestedPartitionsAsEmpty": false,
+    "dimensions": []
+  },
+  "creationTag": {
+    "versionNumber": 0,
+    "lastModifiedBy": {
+      "login": "pierre.petrella"
+    },
+    "lastModifiedOn": 1699549282134,
+    "extendedProperties": {}
+  },
+  "tags": [],
+  "params": {
+    "connection": "filesystem_managed",
+    "path": "/DATAIKU_RDP_PROJECTGALLERY.dataiku_input_prepared",
+    "notReadyIfEmpty": false,
+    "filesSelectionRules": {
+      "mode": "ALL",
+      "excludeRules": [],
+      "includeRules": [],
+      "explicitFiles": []
+    }
+  },
+  "schema": {
+    "columns": [
+      {"name":"TRANSACTION_DATE","type":"date"},
+      {"name":"TRANSACTION_DESCRIPTION","type":"string"},
+      {"name":"TRANSACTION_TIME","type":"string"},
+      {"name":"DATE","type":"string"},
+      {"name":"DATE_parsed","type":"date"},
+      {"name":"INITIAL_PARTY_TYPE","type":"string"},
+      {"name":"CHANNEL","type":"string"},
+      {"name":"FLIGHT_BOOKING_REFERENCE","type":"string"},
+      {"name":"BOOKING_TYPE_GROUP","type":"string"},
+      {"name":"REVENUE_TYPE","type":"string"},
+      {"name":"REVENUE_TYPE_DETAIL","type":"string"},
+      {"name":"PRODUCT_TYPE_DESCRIPTION","type":"string"},
+      {"name":"ROUTE_CATEGORY","type":"string"},
+      {"name":"ONEWAYFLAG","type":"string"},
+      {"name":"SEASON","type":"string"},
+      {"name":"SEASON_TYPE","type":"string"},
+      {"name":"DIRECTION","type":"string"},
+      {"name":"BASE","type":"string"},
+      {"name":"DESTINATION","type":"string"},
+      {"name":"DESTINATION_MEMPHISREGION","type":"string"},
+      {"name":"DESTINATION_COUNTRY","type":"string"},
+      {"name":"PRODUCTGROUPNAME","type":"string"},
+      {"name":"DURATION_BANDED","type":"string"},
+      {"name":"FLIGHT_ONLY_TRANSACTION_KEY","type":"string"},
+      {"name":"FLIGHT_PRODUCT_KEY","type":"string"},
+      {"name":"REVENUE","type":"string"},
+      {"name":"NET_PRODUCT_COUNT","type":"string"},
+      {"name":"PRICE","type":"string"},
+      {"name":"LEAD_TIME_DAYS","type":"string"},
+      {"name":"TRAVELDURATION","type":"string"},
+      {"name":"PASSENGERS_ACCUMULATED","type":"string"},
+      {"name":"RETAILREVENUE_ACCUMULATED","type":"string"},
+      {"name":"RETAILTYPEREVENUE_ACCUMULATED","type":"string"},
+      {"name":"DEPARTUREDOW","type":"string"},
+      {"name":"DEPARTUREMONTH","type":"string"},
+      {"name":"DESTINATION_LATITUDE","type":"string"},
+      {"name":"DESTINATION_LONGITUDE","type":"string"},
+      {"name":"CAPACITY","type":"string"},
+      {"name":"RANK1_PRICE","type":"string"},
+      {"name":"RANKMAX_PRICE","type":"string"},
+      {"name":"GROSSTICKETREVENUE_ACCUMULATED","type":"string"},
+      {"name":"PROFIT_PER_PASSENGERS","type":"string"},
+      {"name":"REMAINING_SEATS","type":"string"},
+      {"name":"LOAD_FACTOR","type":"string"},
+      {"name":"ROUTE_LENGTH_KM","type":"string"},
+      {"name":"PPPratio","type":"string"},
+      {"name":"RECENT_REVENUE","type":"string"},
+      {"name":"XLG_SEAT_COUNT","type":"string"},
+      {"name":"XLG_LOAD_FACTOR","type":"string"},
+      {"name":"PRICE_RANK","type":"string"},
+      {"name":"ID","type":"bigint"}
+    ],
+    "userModified": true
+  },
+  "dkuProperties": [],
+  "metrics": {
+    "probes": [
+      {
+        "type": "basic",
+        "enabled": true,
+        "computeOnBuildMode": "PARTITION",
+        "meta": {
+          "name": "Basic data",
+          "level": 0
+        },
+        "configuration": {}
+      },
+      {
+        "type": "records",
+        "enabled": true,
+        "computeOnBuildMode": "NO",
+        "meta": {
+          "name": "Record count",
+          "level": 0
+        },
+        "configuration": {}
+      }
+    ],
+    "engineConfig": {
+      "padRunsWithMetrics": false,
+      "hive": {
+        "active": true,
+        "extraConf": []
+      },
+      "basic": {},
+      "dss": {
+        "active": true,
+        "selection": {
+          "useMemTable": false,
+          "filter": {
+            "distinct": false,
+            "enabled": false
+          },
+          "partitionSelectionMethod": "ALL",
+          "latestPartitionsN": 1,
+          "ordering": {
+            "enabled": false,
+            "rules": []
+          },
+          "samplingMethod": "FULL",
+          "maxRecords": -1,
+          "targetRatio": 0.02,
+          "ascending": true,
+          "withinFirstN": -1,
+          "maxReadUncompressedBytes": -1
+        }
+      },
+      "sql": {
+        "active": true
+      },
+      "impala": {
+        "active": true
+      },
+      "spark": {
+        "active": true,
+        "extraConf": []
+      },
+      "python": {}
+    },
+    "displayedState": {
+      "columns": [],
+      "metrics": [
+        "basic:COUNT_COLUMNS",
+        "basic:COUNT_FILES",
+        "basic:SIZE",
+        "records:COUNT_RECORDS"
+      ]
+    }
+  },
+  "metricsChecks": {
+    "monitor": false,
+    "checks": [],
+    "displayedState": {
+      "checks": []
+    }
+  },
+  "customFields": {}
+}

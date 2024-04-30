@@ -1,0 +1,67 @@
+{
+  "type": "prediction_scoring",
+  "neverRecomputeExistingPartitions": false,
+  "optionalDependencies": false,
+  "params": {
+    "containerSelection": {
+      "containerMode": "INHERIT"
+    }
+  },
+  "customMeta": {
+    "kv": {}
+  },
+  "redispatchPartitioning": false,
+  "maxRunningActivities": 0,
+  "variables": {},
+  "dkuProperties": [],
+  "inputs": {
+    "model": {
+      "items": [
+        {
+          "ref": "naPZZE1t",
+          "deps": []
+        }
+      ]
+    },
+    "main": {
+      "items": [
+        {
+          "ref": "records_to_score",
+          "deps": []
+        }
+      ]
+    }
+  },
+  "outputs": {
+    "main": {
+      "items": [
+        {
+          "ref": "GREEN_SCORED",
+          "appendMode": false
+        }
+      ]
+    }
+  },
+  "labels": [],
+  "versionTag": {
+    "versionNumber": 10,
+    "lastModifiedBy": {
+      "login": "pierre.petrella"
+    },
+    "lastModifiedOn": 1702571220712,
+    "extendedProperties": {}
+  },
+  "creationTag": {
+    "versionNumber": 0,
+    "lastModifiedBy": {
+      "login": "pierre.petrella"
+    },
+    "lastModifiedOn": 1699545437799,
+    "extendedProperties": {}
+  },
+  "tags": [],
+  "customFields": {},
+  "checklists": {
+    "checklists": []
+  }
+}

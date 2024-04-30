@@ -1,0 +1,168 @@
+{
+  "columnsSelection": {
+    "mode": "ALL"
+  },
+  "explorationSampling": {
+    "_refreshTrigger": 0,
+    "selection": {
+      "latestPartitionsN": 1,
+      "maxRecords": 10000,
+      "maxRecordsForDisplay": -1,
+      "ordering": {
+        "rules": [],
+        "enabled": false
+      },
+      "withinFirstN": -1,
+      "maxStoredBytes": 104857600,
+      "ascending": true,
+      "timeout": -1,
+      "filter": {
+        "distinct": false,
+        "enabled": false
+      },
+      "partitionSelectionMethod": "ALL",
+      "targetRatio": 0.02,
+      "maxReadUncompressedBytes": -1,
+      "samplingMethod": "HEAD_SEQUENTIAL"
+    },
+    "autoRefreshSample": false
+  },
+  "explorationFilters": [],
+  "columnUseScientificNotationByName": {},
+  "origin": "PREPARE_RECIPE",
+  "exploreUIParams": {
+    "autoRefresh": true
+  },
+  "steps": [
+    {
+      "preview": false,
+      "name": "Price \u0026 Predicted Price calculation",
+      "metaType": "GROUP",
+      "disabled": false,
+      "steps": [
+        {
+          "preview": false,
+          "metaType": "PROCESSOR",
+          "disabled": false,
+          "type": "CreateColumnWithGREL",
+          "params": {
+            "expression": "((RANKMAX_PRICE - RANK1_PRICE) * (prediction - 1) / (RANKMAX_PRICE - 1)) + RANK1_PRICE",
+            "column": "predicted_price"
+          },
+          "alwaysShowComment": false
+        },
+        {
+          "preview": false,
+          "metaType": "PROCESSOR",
+          "disabled": false,
+          "type": "CreateColumnWithGREL",
+          "params": {
+            "expression": "((RANKMAX_PRICE - RANK1_PRICE) * (PRICE_RANK - 1) / (RANKMAX_PRICE - 1)) + RANK1_PRICE",
+            "column": "gt_price"
+          },
+          "alwaysShowComment": false
+        }
+      ],
+      "alwaysShowComment": false
+    }
+  ],
+  "maxProcessedMemTableBytes": -1,
+  "previewMode": "ALL_ROWS",
+  "vizSampling": {
+    "_refreshTrigger": 0,
+    "selection": {
+      "useMemTable": false,
+      "filter": {
+        "distinct": false,
+        "enabled": false
+      },
+      "latestPartitionsN": 1,
+      "maxRecords": -1,
+      "ordering": {
+        "rules": [],
+        "enabled": false
+      },
+      "withinFirstN": -1,
+      "partitionSelectionMethod": "ALL",
+      "targetRatio": 0.02,
+      "maxReadUncompressedBytes": -1,
+      "samplingMethod": "FULL",
+      "ascending": true
+    },
+    "autoRefreshSample": false
+  },
+  "analysisColumnData": {},
+  "columnWidthsByName": {
+    "XLG_LOAD_FACTOR": 134,
+    "ROUTE_CATEGORY": 120,
+    "FLIGHT_PRODUCT_KEY": 150,
+    "XLG_SEAT_COUNT": 134,
+    "gt_price": 141,
+    "proba_10": 162,
+    "RANKMAX_PRICE": 113,
+    "DESTINATION_LATITUDE": 165,
+    "RANK1_PRICE": 100,
+    "ID": 100,
+    "TRAVELDURATION": 134,
+    "LOAD_FACTOR": 134,
+    "LEAD_TIME_DAYS": 134,
+    "CAPACITY": 134,
+    "PRICE": 134,
+    "RECENT_REVENUE": 134,
+    "REVENUE": 134,
+    "REVENUE_TYPE_DETAIL": 158,
+    "DESTINATION_MEMPHISREGION": 203,
+    "RETAILREVENUE_ACCUMULATED": 203,
+    "PROFIT_PER_PASSENGERS": 173,
+    "PRODUCTGROUPNAME": 135,
+    "DATE": 148,
+    "CHANNEL": 100,
+    "RETAILTYPEREVENUE_ACCUMULATED": 233,
+    "REMAINING_SEATS": 134,
+    "prediction": 100,
+    "GROSSTICKETREVENUE_ACCUMULATED": 240,
+    "ROUTE_LENGTH_KM": 134,
+    "DESTINATION_COUNTRY": 158,
+    "REVENUE_TYPE": 105,
+    "SEASON_TYPE": 100,
+    "BASE": 100,
+    "NET_PRODUCT_COUNT": 143,
+    "ONEWAYFLAG": 100,
+    "FLIGHT_ONLY_TRANSACTION_KEY": 218,
+    "proba_1": 162,
+    "predicted_price": 155,
+    "TRANSACTION_TIME": 135,
+    "DEPARTUREDOW": 134,
+    "prediction_correct": 150,
+    "DESTINATION_LONGITUDE": 173,
+    "INITIAL_PARTY_TYPE": 150,
+    "TRANSACTION_DATE": 232,
+    "DEPARTUREMONTH": 134,
+    "DURATION_BANDED": 128,
+    "TRANSACTION_DESCRIPTION": 188,
+    "DATE_parsed": 232,
+    "DIRECTION": 113,
+    "proba_7": 162,
+    "proba_8": 162,
+    "proba_9": 162,
+    "proba_3": 162,
+    "proba_4": 162,
+    "SEASON": 100,
+    "proba_5": 162,
+    "proba_6": 162,
+    "PPPratio": 134,
+    "FLIGHT_BOOKING_REFERENCE": 195,
+    "DESTINATION": 100,
+    "PRICE_RANK": 100,
+    "PASSENGERS_ACCUMULATED": 180,
+    "BOOKING_TYPE_GROUP": 150,
+    "PRODUCT_TYPE_DESCRIPTION": 195
+  },
+  "sorting": [],
+  "globalSearchQuery": "",
+  "coloring": {
+    "scheme": "MEANING_AND_STATUS",
+    "individualColumns": [],
+    "valueColoringMode": "HASH"
+  }
+}

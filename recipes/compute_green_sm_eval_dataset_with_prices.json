@@ -1,0 +1,91 @@
+{
+  "type": "shaker",
+  "neverRecomputeExistingPartitions": false,
+  "optionalDependencies": false,
+  "params": {
+    "engineParams": {
+      "spark": {
+        "readParams": {
+          "mode": "AUTO",
+          "autoModeRepartitionInto": 10,
+          "map": {}
+        },
+        "useGlobalMetastore": false,
+        "useNativeProcessors": true,
+        "sparkConfig": {
+          "inheritConf": "default",
+          "conf": []
+        },
+        "executionEngine": "SPARK_SUBMIT",
+        "pipelineAllowStart": true,
+        "pipelineAllowMerge": true,
+        "skipPrerunValidate": false
+      },
+      "hive": {
+        "inheritConf": "default",
+        "hiveconf": [],
+        "executionEngine": "HIVESERVER2",
+        "addDkuUdf": false,
+        "skipPrerunValidate": false
+      },
+      "impala": {
+        "forceStreamMode": true
+      },
+      "hadoopConfigKeys": [],
+      "sqlPipelineParams": {
+        "pipelineAllowStart": true,
+        "pipelineAllowMerge": true
+      },
+      "maxThreads": 8
+    }
+  },
+  "customMeta": {
+    "kv": {}
+  },
+  "redispatchPartitioning": false,
+  "maxRunningActivities": 0,
+  "variables": {},
+  "dkuProperties": [],
+  "inputs": {
+    "main": {
+      "items": [
+        {
+          "ref": "GREEN_sm_eval_dataset",
+          "deps": []
+        }
+      ]
+    }
+  },
+  "outputs": {
+    "main": {
+      "items": [
+        {
+          "ref": "GREEN_sm_eval_dataset_with_prices",
+          "appendMode": false
+        }
+      ]
+    }
+  },
+  "labels": [],
+  "versionTag": {
+    "versionNumber": 4,
+    "lastModifiedBy": {
+      "login": "pierre.petrella"
+    },
+    "lastModifiedOn": 1702568250217,
+    "extendedProperties": {}
+  },
+  "creationTag": {
+    "versionNumber": 0,
+    "lastModifiedBy": {
+      "login": "pierre.petrella"
+    },
+    "lastModifiedOn": 1702484100778,
+    "extendedProperties": {}
+  },
+  "tags": [],
+  "customFields": {},
+  "checklists": {
+    "checklists": []
+  }
+}

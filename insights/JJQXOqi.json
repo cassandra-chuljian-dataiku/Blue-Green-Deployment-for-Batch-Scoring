@@ -1,0 +1,33 @@
+{
+  "type": "metrics",
+  "params": {
+    "objectSmartId": "BLUE_sm_eval_dataset_with_prices",
+    "objectType": "DATASET",
+    "metricId": "python:R2:Custom model metrics"
+  },
+  "owner": "pierre.petrella",
+  "listed": false,
+  "name": "R2 (Custom model metrics) of blue_sm_eval_dataset_with_prices",
+  "dashboardCreationId": "rES7f1H",
+  "versionTag": {
+    "versionNumber": 1,
+    "lastModifiedBy": {
+      "login": "pierre.petrella"
+    },
+    "lastModifiedOn": 1702486293347,
+    "extendedProperties": {}
+  },
+  "creationTag": {
+    "versionNumber": 0,
+    "lastModifiedBy": {
+      "login": "pierre.petrella"
+    },
+    "lastModifiedOn": 1702485071407,
+    "extendedProperties": {}
+  },
+  "tags": [],
+  "customFields": {},
+  "checklists": {
+    "checklists": []
+  }
+}

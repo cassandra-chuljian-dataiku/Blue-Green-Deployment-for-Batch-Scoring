@@ -1,0 +1,33 @@
+{
+  "type": "metrics",
+  "params": {
+    "objectSmartId": "champion_predictions",
+    "objectType": "DATASET",
+    "metricId": "python:R2:Custom model metrics"
+  },
+  "owner": "pierre.petrella",
+  "listed": false,
+  "name": "R2 (Custom model metrics) of champion_predictions",
+  "dashboardCreationId": "rES7f1H",
+  "versionTag": {
+    "versionNumber": 0,
+    "lastModifiedBy": {
+      "login": "pierre.petrella"
+    },
+    "lastModifiedOn": 1702483220162,
+    "extendedProperties": {}
+  },
+  "creationTag": {
+    "versionNumber": 0,
+    "lastModifiedBy": {
+      "login": "pierre.petrella"
+    },
+    "lastModifiedOn": 1702483220162,
+    "extendedProperties": {}
+  },
+  "tags": [],
+  "customFields": {},
+  "checklists": {
+    "checklists": []
+  }
+}

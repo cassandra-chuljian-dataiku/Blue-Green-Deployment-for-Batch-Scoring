@@ -1,0 +1,26 @@
+{
+  "type": "custom_python",
+  "name": "update_challenger_deployment",
+  "active": false,
+  "runAsUser": "cassandra.chuljian@dataiku.com",
+  "checklists": {
+    "checklists": []
+  },
+  "delayedTriggersBehavior": {
+    "delayWhileRunning": true,
+    "squashDelayedTriggers": true,
+    "suppressTriggersWhileRunning": true
+  },
+  "tags": [
+    "helper_scenario"
+  ],
+  "triggers": [],
+  "reporters": [],
+  "params": {
+    "envSelection": {
+      "envMode": "INHERIT"
+    }
+  },
+  "automationLocal": false,
+  "customFields": {}
+}

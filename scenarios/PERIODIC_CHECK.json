@@ -1,0 +1,47 @@
+{
+  "type": "custom_python",
+  "name": "periodic_check",
+  "active": false,
+  "runAsUser": "cassandra.chuljian@dataiku.com",
+  "checklists": {
+    "checklists": []
+  },
+  "delayedTriggersBehavior": {
+    "delayWhileRunning": true,
+    "squashDelayedTriggers": true,
+    "suppressTriggersWhileRunning": true
+  },
+  "tags": [
+    "time_based"
+  ],
+  "triggers": [
+    {
+      "id": "bYvTTtXp",
+      "type": "temporal",
+      "name": "Weekly Lifecycle check",
+      "delay": 5,
+      "active": true,
+      "params": {
+        "repeatFrequency": 1,
+        "frequency": "Weekly",
+        "startingFrom": "2023-11-22",
+        "daysOfWeek": [
+          "Wednesday",
+          "Saturday"
+        ],
+        "minute": 0,
+        "hour": 3,
+        "timezone": "SERVER",
+        "lastUpdate": 1702927202885
+      }
+    }
+  ],
+  "reporters": [],
+  "params": {
+    "envSelection": {
+      "envMode": "INHERIT"
+    }
+  },
+  "automationLocal": false,
+  "customFields": {}
+}

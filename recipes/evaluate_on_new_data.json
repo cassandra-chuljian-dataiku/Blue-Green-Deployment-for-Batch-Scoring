@@ -1,0 +1,75 @@
+{
+  "type": "evaluation",
+  "neverRecomputeExistingPartitions": false,
+  "optionalDependencies": false,
+  "params": {
+    "containerSelection": {
+      "containerMode": "INHERIT"
+    }
+  },
+  "customMeta": {
+    "kv": {}
+  },
+  "redispatchPartitioning": false,
+  "maxRunningActivities": 0,
+  "variables": {},
+  "dkuProperties": [],
+  "inputs": {
+    "main": {
+      "items": [
+        {
+          "ref": "new_data",
+          "deps": []
+        }
+      ]
+    },
+    "model": {
+      "items": [
+        {
+          "ref": "tXLDWR2b",
+          "deps": []
+        }
+      ]
+    }
+  },
+  "outputs": {
+    "evaluationStore": {
+      "items": [
+        {
+          "ref": "ARFVe8tZ",
+          "appendMode": false
+        }
+      ]
+    },
+    "main": {
+      "items": [
+        {
+          "ref": "BLUE_sm_eval_dataset",
+          "appendMode": false
+        }
+      ]
+    }
+  },
+  "labels": [],
+  "versionTag": {
+    "versionNumber": 4,
+    "lastModifiedBy": {
+      "login": "pierre.petrella"
+    },
+    "lastModifiedOn": 1702568241006,
+    "extendedProperties": {}
+  },
+  "creationTag": {
+    "versionNumber": 0,
+    "lastModifiedBy": {
+      "login": "pierre.petrella"
+    },
+    "lastModifiedOn": 1700496194393,
+    "extendedProperties": {}
+  },
+  "tags": [],
+  "customFields": {},
+  "checklists": {
+    "checklists": []
+  }
+}

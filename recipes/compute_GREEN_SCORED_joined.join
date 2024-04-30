@@ -1,0 +1,932 @@
+{
+  "joins": [
+    {
+      "table2": 1,
+      "table1": 0,
+      "conditionsMode": "AND",
+      "type": "LEFT",
+      "outerJoinOnTheLeft": true,
+      "on": [
+        {
+          "column1": {
+            "name": "ID",
+            "table": 0
+          },
+          "dateDiffUnit": "DAY",
+          "windowFrom": 0,
+          "column2": {
+            "name": "ID",
+            "table": 1
+          },
+          "maxMatches": 1,
+          "caseInsensitive": false,
+          "maxDistance": 0,
+          "normalizeText": false,
+          "type": "EQ",
+          "strict": false,
+          "windowTo": 0
+        }
+      ]
+    },
+    {
+      "table2": 2,
+      "table1": 0,
+      "conditionsMode": "AND",
+      "rightLimit": {
+        "maxMatches": 1,
+        "strict": false,
+        "enabled": false
+      },
+      "type": "LEFT",
+      "outerJoinOnTheLeft": true,
+      "on": [
+        {
+          "column1": {
+            "name": "ID",
+            "table": 0
+          },
+          "dateDiffUnit": "SECOND",
+          "windowFrom": 0,
+          "column2": {
+            "name": "ID",
+            "table": 2
+          },
+          "maxMatches": 1,
+          "caseInsensitive": false,
+          "maxDistance": 0,
+          "normalizeText": false,
+          "type": "EQ",
+          "strict": false,
+          "windowTo": 0
+        }
+      ]
+    }
+  ],
+  "selectedColumns": [
+    {
+      "name": "TRANSACTION_DATE",
+      "type": "date",
+      "table": 0
+    },
+    {
+      "name": "TRANSACTION_DESCRIPTION",
+      "type": "string",
+      "table": 0
+    },
+    {
+      "name": "TRANSACTION_TIME",
+      "type": "string",
+      "table": 0
+    },
+    {
+      "name": "DATE",
+      "type": "string",
+      "table": 0
+    },
+    {
+      "name": "DATE_parsed",
+      "type": "date",
+      "table": 0
+    },
+    {
+      "name": "INITIAL_PARTY_TYPE",
+      "type": "string",
+      "table": 0
+    },
+    {
+      "name": "CHANNEL",
+      "type": "string",
+      "table": 0
+    },
+    {
+      "name": "FLIGHT_BOOKING_REFERENCE",
+      "type": "string",
+      "table": 0
+    },
+    {
+      "name": "BOOKING_TYPE_GROUP",
+      "type": "string",
+      "table": 0
+    },
+    {
+      "name": "REVENUE_TYPE",
+      "type": "string",
+      "table": 0
+    },
+    {
+      "name": "REVENUE_TYPE_DETAIL",
+      "type": "string",
+      "table": 0
+    },
+    {
+      "name": "PRODUCT_TYPE_DESCRIPTION",
+      "type": "string",
+      "table": 0
+    },
+    {
+      "name": "ROUTE_CATEGORY",
+      "type": "string",
+      "table": 0
+    },
+    {
+      "name": "ONEWAYFLAG",
+      "type": "boolean",
+      "table": 0
+    },
+    {
+      "name": "SEASON",
+      "type": "string",
+      "table": 0
+    },
+    {
+      "name": "SEASON_TYPE",
+      "type": "string",
+      "table": 0
+    },
+    {
+      "name": "DIRECTION",
+      "type": "string",
+      "table": 0
+    },
+    {
+      "name": "BASE",
+      "type": "string",
+      "table": 0
+    },
+    {
+      "name": "DESTINATION",
+      "type": "string",
+      "table": 0
+    },
+    {
+      "name": "DESTINATION_MEMPHISREGION",
+      "type": "string",
+      "table": 0
+    },
+    {
+      "name": "DESTINATION_COUNTRY",
+      "type": "string",
+      "table": 0
+    },
+    {
+      "name": "PRODUCTGROUPNAME",
+      "type": "string",
+      "table": 0
+    },
+    {
+      "name": "DURATION_BANDED",
+      "type": "string",
+      "table": 0
+    },
+    {
+      "name": "FLIGHT_ONLY_TRANSACTION_KEY",
+      "type": "double",
+      "table": 0
+    },
+    {
+      "name": "FLIGHT_PRODUCT_KEY",
+      "type": "double",
+      "table": 0
+    },
+    {
+      "name": "REVENUE",
+      "type": "double",
+      "table": 0
+    },
+    {
+      "name": "NET_PRODUCT_COUNT",
+      "type": "double",
+      "table": 0
+    },
+    {
+      "name": "PRICE",
+      "type": "double",
+      "table": 0
+    },
+    {
+      "name": "LEAD_TIME_DAYS",
+      "type": "double",
+      "table": 0
+    },
+    {
+      "name": "TRAVELDURATION",
+      "type": "double",
+      "table": 0
+    },
+    {
+      "name": "PASSENGERS_ACCUMULATED",
+      "type": "double",
+      "table": 0
+    },
+    {
+      "name": "RETAILREVENUE_ACCUMULATED",
+      "type": "double",
+      "table": 0
+    },
+    {
+      "name": "RETAILTYPEREVENUE_ACCUMULATED",
+      "type": "double",
+      "table": 0
+    },
+    {
+      "name": "DEPARTUREDOW",
+      "type": "double",
+      "table": 0
+    },
+    {
+      "name": "DEPARTUREMONTH",
+      "type": "double",
+      "table": 0
+    },
+    {
+      "name": "DESTINATION_LATITUDE",
+      "type": "double",
+      "table": 0
+    },
+    {
+      "name": "DESTINATION_LONGITUDE",
+      "type": "double",
+      "table": 0
+    },
+    {
+      "name": "CAPACITY",
+      "type": "double",
+      "table": 0
+    },
+    {
+      "name": "RANK1_PRICE",
+      "type": "bigint",
+      "table": 0
+    },
+    {
+      "name": "RANKMAX_PRICE",
+      "type": "bigint",
+      "table": 0
+    },
+    {
+      "name": "GROSSTICKETREVENUE_ACCUMULATED",
+      "type": "double",
+      "table": 0
+    },
+    {
+      "name": "PROFIT_PER_PASSENGERS",
+      "type": "double",
+      "table": 0
+    },
+    {
+      "name": "REMAINING_SEATS",
+      "type": "double",
+      "table": 0
+    },
+    {
+      "name": "LOAD_FACTOR",
+      "type": "double",
+      "table": 0
+    },
+    {
+      "name": "ROUTE_LENGTH_KM",
+      "type": "double",
+      "table": 0
+    },
+    {
+      "name": "PPPratio",
+      "type": "double",
+      "table": 0
+    },
+    {
+      "name": "RECENT_REVENUE",
+      "type": "double",
+      "table": 0
+    },
+    {
+      "name": "XLG_SEAT_COUNT",
+      "type": "double",
+      "table": 0
+    },
+    {
+      "name": "XLG_LOAD_FACTOR",
+      "type": "double",
+      "table": 0
+    },
+    {
+      "name": "PRICE_RANK",
+      "type": "bigint",
+      "table": 0
+    },
+    {
+      "name": "ID",
+      "type": "bigint",
+      "table": 0
+    },
+    {
+      "name": "PPP_overall",
+      "type": "bigint",
+      "table": 0
+    },
+    {
+      "name": "PPP_last_7_days",
+      "type": "bigint",
+      "table": 0
+    },
+    {
+      "name": "uptake_overall",
+      "type": "double",
+      "table": 0
+    },
+    {
+      "name": "uptake_last_7_days",
+      "type": "double",
+      "table": 0
+    },
+    {
+      "name": "proba_8",
+      "alias": "GREEN_proba_8",
+      "type": "double",
+      "table": 0
+    },
+    {
+      "name": "proba_9",
+      "alias": "GREEN_proba_9",
+      "type": "double",
+      "table": 0
+    },
+    {
+      "name": "proba_7",
+      "alias": "GREEN_proba_7",
+      "type": "double",
+      "table": 0
+    },
+    {
+      "name": "proba_10",
+      "alias": "GREEN_proba_10",
+      "type": "double",
+      "table": 0
+    },
+    {
+      "name": "proba_6",
+      "alias": "GREEN_proba_6",
+      "type": "double",
+      "table": 0
+    },
+    {
+      "name": "proba_5",
+      "alias": "GREEN_proba_5",
+      "type": "double",
+      "table": 0
+    },
+    {
+      "name": "proba_4",
+      "alias": "GREEN_proba_4",
+      "type": "double",
+      "table": 0
+    },
+    {
+      "name": "proba_3",
+      "alias": "GREEN_proba_3",
+      "type": "double",
+      "table": 0
+    },
+    {
+      "name": "proba_1",
+      "alias": "GREEN_proba_1",
+      "type": "double",
+      "table": 0
+    },
+    {
+      "name": "prediction",
+      "alias": "GREEN_prediction",
+      "type": "string",
+      "table": 0
+    },
+    {
+      "name": "smmd_savedModelId",
+      "alias": "GREEN_smmd_savedModelId",
+      "type": "string",
+      "table": 0
+    },
+    {
+      "name": "smmd_modelVersion",
+      "alias": "GREEN_smmd_modelVersion",
+      "type": "string",
+      "table": 0
+    },
+    {
+      "name": "smmd_fullModelId",
+      "alias": "GREEN_smmd_fullModelId",
+      "type": "string",
+      "table": 0
+    },
+    {
+      "name": "smmd_predictionTime",
+      "alias": "GREEN_smmd_predictionTime",
+      "type": "date",
+      "table": 0
+    },
+    {
+      "name": "proba_8",
+      "type": "double",
+      "table": 1
+    },
+    {
+      "name": "proba_9",
+      "type": "double",
+      "table": 1
+    },
+    {
+      "name": "proba_7",
+      "type": "double",
+      "table": 1
+    },
+    {
+      "name": "proba_10",
+      "type": "double",
+      "table": 1
+    },
+    {
+      "name": "proba_6",
+      "type": "double",
+      "table": 1
+    },
+    {
+      "name": "proba_5",
+      "type": "double",
+      "table": 1
+    },
+    {
+      "name": "proba_4",
+      "type": "double",
+      "table": 1
+    },
+    {
+      "name": "proba_3",
+      "type": "double",
+      "table": 1
+    },
+    {
+      "name": "proba_1",
+      "type": "double",
+      "table": 1
+    },
+    {
+      "name": "prediction",
+      "type": "string",
+      "table": 1
+    },
+    {
+      "name": "smmd_savedModelId",
+      "type": "string",
+      "table": 1
+    },
+    {
+      "name": "smmd_modelVersion",
+      "type": "string",
+      "table": 1
+    },
+    {
+      "name": "smmd_fullModelId",
+      "type": "string",
+      "table": 1
+    },
+    {
+      "name": "smmd_predictionTime",
+      "type": "date",
+      "table": 1
+    },
+    {
+      "name": "50_50_split",
+      "type": "string",
+      "table": 2
+    },
+    {
+      "name": "10_90_split",
+      "type": "string",
+      "table": 2
+    }
+  ],
+  "resolvedSelectedColumns": [],
+  "engineParams": {
+    "hive": {
+      "skipPrerunValidate": false,
+      "hiveconf": [],
+      "inheritConf": "default",
+      "addDkuUdf": false,
+      "executionEngine": "HIVESERVER2"
+    },
+    "sqlPipelineParams": {
+      "pipelineAllowMerge": true,
+      "pipelineAllowStart": true
+    },
+    "impala": {
+      "forceStreamMode": true
+    },
+    "lowerCaseSchemaIfEngineRequiresIt": true,
+    "sparkSQL": {
+      "skipPrerunValidate": false,
+      "pipelineAllowMerge": true,
+      "useGlobalMetastore": false,
+      "pipelineAllowStart": true,
+      "readParams": {
+        "mode": "AUTO",
+        "autoModeRepartitionInto": 10,
+        "map": {}
+      },
+      "overwriteOutputSchema": false,
+      "executionEngine": "SPARK_SUBMIT",
+      "sparkConfig": {
+        "inheritConf": "default",
+        "conf": []
+      }
+    }
+  },
+  "virtualInputs": [
+    {
+      "outputColumnsSelectionMode": "MANUAL",
+      "preFilter": {
+        "distinct": false,
+        "enabled": false
+      },
+      "prefix": "",
+      "originLabel": "GREEN_SCORED",
+      "name": "DATAIKU_RDP_PROJECT.GREEN_SCORED",
+      "alias": "GREEN_SCORED",
+      "index": 0,
+      "computedColumns": []
+    },
+    {
+      "outputColumnsSelectionMode": "MANUAL",
+      "preFilter": {
+        "distinct": false,
+        "enabled": false
+      },
+      "prefix": "BLUE",
+      "originLabel": "BLUE_SCORED",
+      "name": "DATAIKU_RDP_PROJECT.BLUE_SCORED",
+      "alias": "BLUE_SCORED",
+      "index": 1,
+      "computedColumns": []
+    },
+    {
+      "outputColumnsSelectionMode": "MANUAL",
+      "preFilter": {
+        "distinct": false,
+        "enabled": false
+      },
+      "name": "DATAIKU_RDP_PROJECT.Split_strategy",
+      "alias": "Split_strategy",
+      "index": 2
+    }
+  ],
+  "postFilter": {
+    "$status": {
+      "schema": {
+        "columns": [
+          {
+            "name": "TRANSACTION_DATE",
+            "type": "date"
+          },
+          {
+            "name": "TRANSACTION_DESCRIPTION",
+            "type": "string"
+          },
+          {
+            "name": "TRANSACTION_TIME",
+            "type": "string"
+          },
+          {
+            "name": "DATE",
+            "type": "string"
+          },
+          {
+            "name": "DATE_parsed",
+            "type": "date"
+          },
+          {
+            "name": "INITIAL_PARTY_TYPE",
+            "type": "string"
+          },
+          {
+            "name": "CHANNEL",
+            "type": "string"
+          },
+          {
+            "name": "FLIGHT_BOOKING_REFERENCE",
+            "type": "string"
+          },
+          {
+            "name": "BOOKING_TYPE_GROUP",
+            "type": "string"
+          },
+          {
+            "name": "REVENUE_TYPE",
+            "type": "string"
+          },
+          {
+            "name": "REVENUE_TYPE_DETAIL",
+            "type": "string"
+          },
+          {
+            "name": "PRODUCT_TYPE_DESCRIPTION",
+            "type": "string"
+          },
+          {
+            "name": "ROUTE_CATEGORY",
+            "type": "string"
+          },
+          {
+            "name": "ONEWAYFLAG",
+            "type": "boolean"
+          },
+          {
+            "name": "SEASON",
+            "type": "string"
+          },
+          {
+            "name": "SEASON_TYPE",
+            "type": "string"
+          },
+          {
+            "name": "DIRECTION",
+            "type": "string"
+          },
+          {
+            "name": "BASE",
+            "type": "string"
+          },
+          {
+            "name": "DESTINATION",
+            "type": "string"
+          },
+          {
+            "name": "DESTINATION_MEMPHISREGION",
+            "type": "string"
+          },
+          {
+            "name": "DESTINATION_COUNTRY",
+            "type": "string"
+          },
+          {
+            "name": "PRODUCTGROUPNAME",
+            "type": "string"
+          },
+          {
+            "name": "DURATION_BANDED",
+            "type": "string"
+          },
+          {
+            "name": "FLIGHT_ONLY_TRANSACTION_KEY",
+            "type": "double"
+          },
+          {
+            "name": "FLIGHT_PRODUCT_KEY",
+            "type": "double"
+          },
+          {
+            "name": "REVENUE",
+            "type": "double"
+          },
+          {
+            "name": "NET_PRODUCT_COUNT",
+            "type": "double"
+          },
+          {
+            "name": "PRICE",
+            "type": "double"
+          },
+          {
+            "name": "LEAD_TIME_DAYS",
+            "type": "double"
+          },
+          {
+            "name": "TRAVELDURATION",
+            "type": "double"
+          },
+          {
+            "name": "PASSENGERS_ACCUMULATED",
+            "type": "double"
+          },
+          {
+            "name": "RETAILREVENUE_ACCUMULATED",
+            "type": "double"
+          },
+          {
+            "name": "RETAILTYPEREVENUE_ACCUMULATED",
+            "type": "double"
+          },
+          {
+            "name": "DEPARTUREDOW",
+            "type": "double"
+          },
+          {
+            "name": "DEPARTUREMONTH",
+            "type": "double"
+          },
+          {
+            "name": "DESTINATION_LATITUDE",
+            "type": "double"
+          },
+          {
+            "name": "DESTINATION_LONGITUDE",
+            "type": "double"
+          },
+          {
+            "name": "CAPACITY",
+            "type": "double"
+          },
+          {
+            "name": "RANK1_PRICE",
+            "type": "bigint"
+          },
+          {
+            "name": "RANKMAX_PRICE",
+            "type": "bigint"
+          },
+          {
+            "name": "GROSSTICKETREVENUE_ACCUMULATED",
+            "type": "double"
+          },
+          {
+            "name": "PROFIT_PER_PASSENGERS",
+            "type": "double"
+          },
+          {
+            "name": "REMAINING_SEATS",
+            "type": "double"
+          },
+          {
+            "name": "LOAD_FACTOR",
+            "type": "double"
+          },
+          {
+            "name": "ROUTE_LENGTH_KM",
+            "type": "double"
+          },
+          {
+            "name": "PPPratio",
+            "type": "double"
+          },
+          {
+            "name": "RECENT_REVENUE",
+            "type": "double"
+          },
+          {
+            "name": "XLG_SEAT_COUNT",
+            "type": "double"
+          },
+          {
+            "name": "XLG_LOAD_FACTOR",
+            "type": "double"
+          },
+          {
+            "name": "PRICE_RANK",
+            "type": "bigint"
+          },
+          {
+            "name": "ID",
+            "type": "bigint"
+          },
+          {
+            "name": "PPP_overall",
+            "type": "bigint"
+          },
+          {
+            "name": "PPP_last_7_days",
+            "type": "bigint"
+          },
+          {
+            "name": "uptake_overall",
+            "type": "double"
+          },
+          {
+            "name": "uptake_last_7_days",
+            "type": "double"
+          },
+          {
+            "name": "GREEN_proba_8",
+            "type": "double"
+          },
+          {
+            "name": "GREEN_proba_9",
+            "type": "double"
+          },
+          {
+            "name": "GREEN_proba_7",
+            "type": "double"
+          },
+          {
+            "name": "GREEN_proba_10",
+            "type": "double"
+          },
+          {
+            "name": "GREEN_proba_6",
+            "type": "double"
+          },
+          {
+            "name": "GREEN_proba_5",
+            "type": "double"
+          },
+          {
+            "name": "GREEN_proba_4",
+            "type": "double"
+          },
+          {
+            "name": "GREEN_proba_3",
+            "type": "double"
+          },
+          {
+            "name": "GREEN_proba_1",
+            "type": "double"
+          },
+          {
+            "name": "GREEN_prediction",
+            "type": "string"
+          },
+          {
+            "name": "GREEN_smmd_savedModelId",
+            "type": "string"
+          },
+          {
+            "name": "GREEN_smmd_modelVersion",
+            "type": "string"
+          },
+          {
+            "name": "GREEN_smmd_fullModelId",
+            "type": "string"
+          },
+          {
+            "name": "GREEN_smmd_predictionTime",
+            "type": "date"
+          },
+          {
+            "name": "BLUE_proba_8",
+            "type": "double"
+          },
+          {
+            "name": "BLUE_proba_9",
+            "type": "double"
+          },
+          {
+            "name": "BLUE_proba_7",
+            "type": "double"
+          },
+          {
+            "name": "BLUE_proba_10",
+            "type": "double"
+          },
+          {
+            "name": "BLUE_proba_6",
+            "type": "double"
+          },
+          {
+            "name": "BLUE_proba_5",
+            "type": "double"
+          },
+          {
+            "name": "BLUE_proba_4",
+            "type": "double"
+          },
+          {
+            "name": "BLUE_proba_3",
+            "type": "double"
+          },
+          {
+            "name": "BLUE_proba_1",
+            "type": "double"
+          },
+          {
+            "name": "BLUE_prediction",
+            "type": "string"
+          },
+          {
+            "name": "BLUE_smmd_savedModelId",
+            "type": "string"
+          },
+          {
+            "name": "BLUE_smmd_modelVersion",
+            "type": "string"
+          },
+          {
+            "name": "BLUE_smmd_fullModelId",
+            "type": "string"
+          },
+          {
+            "name": "BLUE_smmd_predictionTime",
+            "type": "date"
+          },
+          {
+            "name": "50_50_split",
+            "type": "string"
+          },
+          {
+            "name": "10_90_split",
+            "type": "string"
+          }
+        ],
+        "userModified": false
+      }
+    },
+    "distinct": false,
+    "enabled": false
+  },
+  "computedColumns": [],
+  "enableAutoCastInJoinConditions": false
+}

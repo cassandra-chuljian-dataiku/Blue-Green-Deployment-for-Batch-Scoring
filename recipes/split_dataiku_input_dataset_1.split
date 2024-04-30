@@ -1,0 +1,325 @@
+{
+  "centileShuffle": false,
+  "centileSplits": [
+    {
+      "outputIndex": 0,
+      "share": 50
+    }
+  ],
+  "preFilter": {
+    "distinct": false,
+    "enabled": false
+  },
+  "defaultOutputIndex": 1,
+  "seed": 1337,
+  "randomColumns": [],
+  "centileOrders": [],
+  "rangeSetTime": false,
+  "column": "TRANSACTION_DATE",
+  "randomSplits": [
+    {
+      "outputIndex": 0,
+      "share": 50
+    }
+  ],
+  "randomColumnsSplits": [
+    {
+      "outputIndex": 0,
+      "share": 50
+    }
+  ],
+  "computedColumns": [],
+  "writeComputedColumnsInOutput": false,
+  "mode": "RANGE",
+  "centileTDigest": false,
+  "valueSplits": [
+    {
+      "outputIndex": 0,
+      "caseSensitive": false,
+      "value": ""
+    }
+  ],
+  "rangeSplits": [
+    {
+      "filter": {
+        "uiData": {
+          "mode": "\u0026\u0026",
+          "conditions": [
+            {
+              "date": "2022-10-05",
+              "input": "TRANSACTION_DATE",
+              "frontDate": "2022-10-05",
+              "time": "00:00",
+              "operator": "\u003e\u003d [date]"
+            },
+            {
+              "date": "2023-06-30",
+              "input": "TRANSACTION_DATE",
+              "frontDate": "2023-06-30",
+              "time": "00:00",
+              "operator": "\u003c\u003d [date]"
+            }
+          ]
+        }
+      },
+      "outputIndex": 0
+    }
+  ],
+  "engineParams": {
+    "hive": {
+      "skipPrerunValidate": false,
+      "hiveconf": [],
+      "inheritConf": "default",
+      "addDkuUdf": false,
+      "executionEngine": "HIVESERVER2"
+    },
+    "sqlPipelineParams": {
+      "pipelineAllowMerge": true,
+      "pipelineAllowStart": true
+    },
+    "impala": {
+      "forceStreamMode": true
+    },
+    "lowerCaseSchemaIfEngineRequiresIt": true,
+    "sparkSQL": {
+      "skipPrerunValidate": false,
+      "pipelineAllowMerge": true,
+      "useGlobalMetastore": false,
+      "pipelineAllowStart": true,
+      "readParams": {
+        "mode": "AUTO",
+        "autoModeRepartitionInto": 10,
+        "map": {}
+      },
+      "overwriteOutputSchema": false,
+      "executionEngine": "SPARK_SUBMIT",
+      "sparkConfig": {
+        "inheritConf": "default",
+        "conf": []
+      }
+    }
+  },
+  "filterSplits": [
+    {
+      "filter": {
+        "uiData": {
+          "mode": "\u0026\u0026",
+          "conditions": []
+        },
+        "$status": {
+          "schema": {
+            "columns": [
+              {
+                "name": "TRANSACTION_DATE",
+                "type": "date"
+              },
+              {
+                "name": "TRANSACTION_DESCRIPTION",
+                "type": "string"
+              },
+              {
+                "name": "TRANSACTION_TIME",
+                "type": "string"
+              },
+              {
+                "name": "DATE",
+                "type": "string"
+              },
+              {
+                "name": "DATE_parsed",
+                "type": "date"
+              },
+              {
+                "name": "INITIAL_PARTY_TYPE",
+                "type": "string"
+              },
+              {
+                "name": "CHANNEL",
+                "type": "string"
+              },
+              {
+                "name": "FLIGHT_BOOKING_REFERENCE",
+                "type": "string"
+              },
+              {
+                "name": "BOOKING_TYPE_GROUP",
+                "type": "string"
+              },
+              {
+                "name": "REVENUE_TYPE",
+                "type": "string"
+              },
+              {
+                "name": "REVENUE_TYPE_DETAIL",
+                "type": "string"
+              },
+              {
+                "name": "PRODUCT_TYPE_DESCRIPTION",
+                "type": "string"
+              },
+              {
+                "name": "ROUTE_CATEGORY",
+                "type": "string"
+              },
+              {
+                "name": "ONEWAYFLAG",
+                "type": "string"
+              },
+              {
+                "name": "SEASON",
+                "type": "string"
+              },
+              {
+                "name": "SEASON_TYPE",
+                "type": "string"
+              },
+              {
+                "name": "DIRECTION",
+                "type": "string"
+              },
+              {
+                "name": "BASE",
+                "type": "string"
+              },
+              {
+                "name": "DESTINATION",
+                "type": "string"
+              },
+              {
+                "name": "DESTINATION_MEMPHISREGION",
+                "type": "string"
+              },
+              {
+                "name": "DESTINATION_COUNTRY",
+                "type": "string"
+              },
+              {
+                "name": "PRODUCTGROUPNAME",
+                "type": "string"
+              },
+              {
+                "name": "DURATION_BANDED",
+                "type": "string"
+              },
+              {
+                "name": "FLIGHT_ONLY_TRANSACTION_KEY",
+                "type": "string"
+              },
+              {
+                "name": "FLIGHT_PRODUCT_KEY",
+                "type": "string"
+              },
+              {
+                "name": "REVENUE",
+                "type": "string"
+              },
+              {
+                "name": "NET_PRODUCT_COUNT",
+                "type": "string"
+              },
+              {
+                "name": "PRICE",
+                "type": "string"
+              },
+              {
+                "name": "LEAD_TIME_DAYS",
+                "type": "string"
+              },
+              {
+                "name": "TRAVELDURATION",
+                "type": "string"
+              },
+              {
+                "name": "PASSENGERS_ACCUMULATED",
+                "type": "string"
+              },
+              {
+                "name": "RETAILREVENUE_ACCUMULATED",
+                "type": "string"
+              },
+              {
+                "name": "RETAILTYPEREVENUE_ACCUMULATED",
+                "type": "string"
+              },
+              {
+                "name": "DEPARTUREDOW",
+                "type": "string"
+              },
+              {
+                "name": "DEPARTUREMONTH",
+                "type": "string"
+              },
+              {
+                "name": "DESTINATION_LATITUDE",
+                "type": "string"
+              },
+              {
+                "name": "DESTINATION_LONGITUDE",
+                "type": "string"
+              },
+              {
+                "name": "CAPACITY",
+                "type": "string"
+              },
+              {
+                "name": "RANK1_PRICE",
+                "type": "string"
+              },
+              {
+                "name": "RANKMAX_PRICE",
+                "type": "string"
+              },
+              {
+                "name": "GROSSTICKETREVENUE_ACCUMULATED",
+                "type": "string"
+              },
+              {
+                "name": "PROFIT_PER_PASSENGERS",
+                "type": "string"
+              },
+              {
+                "name": "REMAINING_SEATS",
+                "type": "string"
+              },
+              {
+                "name": "LOAD_FACTOR",
+                "type": "string"
+              },
+              {
+                "name": "ROUTE_LENGTH_KM",
+                "type": "string"
+              },
+              {
+                "name": "PPPratio",
+                "type": "string"
+              },
+              {
+                "name": "RECENT_REVENUE",
+                "type": "string"
+              },
+              {
+                "name": "XLG_SEAT_COUNT",
+                "type": "string"
+              },
+              {
+                "name": "XLG_LOAD_FACTOR",
+                "type": "string"
+              },
+              {
+                "name": "PRICE_RANK",
+                "type": "string"
+              },
+              {
+                "name": "ID",
+                "type": "bigint"
+              }
+            ]
+          }
+        },
+        "distinct": false,
+        "enabled": true
+      },
+      "outputIndex": 0
+    }
+  ]
+}

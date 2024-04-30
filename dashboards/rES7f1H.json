@@ -1,0 +1,117 @@
+{
+  "checklists": {
+    "checklists": []
+  },
+  "creationTag": {
+    "extendedProperties": {},
+    "lastModifiedBy": {
+      "login": "Pratik.Shirbhate@jet2.com"
+    },
+    "lastModifiedOn": 1699275068287,
+    "versionNumber": 0
+  },
+  "customFields": {},
+  "listed": true,
+  "name": "DATAIKU_RDP_PROJECT's default dashboard",
+  "owner": "Pratik.Shirbhate@jet2.com",
+  "pages": [
+    {
+      "enableCrossFilters": true,
+      "filtersParams": {
+        "panelPosition": "TOP"
+      },
+      "grid": {
+        "tiles": [
+          {
+            "autoLoad": true,
+            "box": {
+              "height": 5,
+              "left": 0,
+              "top": 0,
+              "width": 8
+            },
+            "clickAction": "DO_NOTHING",
+            "displayMode": "INSIGHT",
+            "insightId": "njahbTJ",
+            "insightType": "chart",
+            "resizeImageMode": "FIT_SIZE",
+            "showTitle": "YES",
+            "tileParams": {
+              "autoPlayAnimation": true,
+              "inheritLegendPlacement": true,
+              "legendPlacement": "OUTER_RIGHT",
+              "showLegend": false,
+              "showTooltips": true,
+              "showXAxis": true,
+              "showYAxis": true
+            },
+            "tileType": "INSIGHT"
+          },
+          {
+            "autoLoad": true,
+            "box": {
+              "height": 1,
+              "left": 8,
+              "top": 0,
+              "width": 4
+            },
+            "clickAction": "OPEN_INSIGHT",
+            "displayMode": "INSIGHT",
+            "insightId": "U4anzPj",
+            "insightType": "metrics",
+            "resizeImageMode": "FIT_SIZE",
+            "showTitle": "YES",
+            "tileParams": {
+              "displayMode": "LAST_VALUE"
+            },
+            "tileType": "INSIGHT"
+          },
+          {
+            "autoLoad": true,
+            "box": {
+              "height": 1,
+              "left": 8,
+              "top": 1,
+              "width": 4
+            },
+            "clickAction": "OPEN_INSIGHT",
+            "displayMode": "INSIGHT",
+            "insightId": "JJQXOqi",
+            "insightType": "metrics",
+            "resizeImageMode": "FIT_SIZE",
+            "showTitle": "YES",
+            "tileParams": {
+              "displayMode": "LAST_VALUE"
+            },
+            "tileType": "INSIGHT"
+          },
+          {
+            "autoLoad": true,
+            "box": {
+              "height": 1,
+              "left": 8,
+              "top": 2,
+              "width": 4
+            },
+            "clickAction": "OPEN_INSIGHT",
+            "displayMode": "INSIGHT",
+            "insightId": "z0VZtcg",
+            "insightType": "metrics",
+            "resizeImageMode": "FIT_SIZE",
+            "showTitle": "YES",
+            "tileParams": {
+              "displayMode": "LAST_VALUE"
+            },
+            "tileType": "INSIGHT"
+          }
+        ]
+      },
+      "id": "qmgPJFj",
+      "showTitle": false,
+      "title": "Daily Prediction"
+    }
+  ],
+  "reloadWhenEventReceived": false,
+  "showGrid": true,
+  "tags": []
+}

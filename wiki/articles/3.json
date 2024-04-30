@@ -1,0 +1,30 @@
+{
+  "name": "HOW TO USE",
+  "layout": "WIKI_ARTICLE",
+  "attachments": [
+    {
+      "attachmentType": "FILE",
+      "smartId": "GFidOZxwML3i",
+      "details": {
+        "objectDisplayName": "Screenshot 2023-12-06 at 09.31.11.png",
+        "size": 325333,
+        "mimeType": "image/png"
+      },
+      "attachedBy": "pierre.petrella",
+      "attachedOn": 1701855075355
+    }
+  ],
+  "creationTag": {
+    "versionNumber": 0,
+    "lastModifiedBy": {
+      "login": "pierre.petrella"
+    },
+    "lastModifiedOn": 1700749178281,
+    "extendedProperties": {}
+  },
+  "tags": [],
+  "customFields": {},
+  "checklists": {
+    "checklists": []
+  }
+}

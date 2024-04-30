@@ -1,0 +1,20 @@
+{
+  "name": "Calculated Field Performance Metrics",
+  "color": "#8C2DA7",
+  "items": [
+    {
+      "objectId": "records_to_score_performance_10_90",
+      "objectType": "DATASET"
+    },
+    {
+      "objectId": "records_to_score_performance_50_50",
+      "objectType": "DATASET"
+    }
+  ],
+  "shared": [],
+  "tags": [],
+  "customFields": {},
+  "checklists": {
+    "checklists": []
+  }
+}

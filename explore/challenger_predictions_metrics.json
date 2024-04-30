@@ -1,0 +1,129 @@
+{
+  "script": {
+    "steps": [],
+    "maxProcessedMemTableBytes": -1,
+    "columnsSelection": {
+      "mode": "ALL"
+    },
+    "columnWidthsByName": {
+      "partition": 100,
+      "metricId": 300,
+      "timeComputed": 183,
+      "valueType": 100,
+      "stringValue": 197,
+      "longValue": 100,
+      "booleanValue": 105,
+      "dateValue": 100,
+      "doubleValue": 134
+    },
+    "columnUseScientificNotationByName": {},
+    "coloring": {
+      "scheme": "MEANING_AND_STATUS",
+      "individualColumns": [],
+      "individualColumnsRules": [],
+      "valueColoringMode": "HASH"
+    },
+    "sorting": [
+      {
+        "column": "timeComputed",
+        "ascending": false
+      }
+    ],
+    "analysisColumnData": {},
+    "explorationSampling": {
+      "selection": {
+        "maxRecordsForDisplay": -1,
+        "maxStoredBytes": 104857600,
+        "timeout": -1,
+        "filter": {
+          "distinct": false,
+          "enabled": false
+        },
+        "partitionSelectionMethod": "ALL",
+        "latestPartitionsN": 1,
+        "ordering": {
+          "enabled": false,
+          "rules": []
+        },
+        "samplingMethod": "HEAD_SEQUENTIAL",
+        "maxRecords": 10000,
+        "targetRatio": 0.02,
+        "ascending": true,
+        "withinFirstN": -1,
+        "maxReadUncompressedBytes": -1
+      },
+      "autoRefreshSample": false,
+      "_refreshTrigger": 0
+    },
+    "vizSampling": {
+      "selection": {
+        "useMemTable": false,
+        "filter": {
+          "distinct": false,
+          "enabled": false
+        },
+        "partitionSelectionMethod": "ALL",
+        "latestPartitionsN": 1,
+        "ordering": {
+          "enabled": false,
+          "rules": []
+        },
+        "samplingMethod": "FULL",
+        "maxRecords": -1,
+        "targetRatio": 0.02,
+        "ascending": true,
+        "withinFirstN": -1,
+        "maxReadUncompressedBytes": -1
+      },
+      "autoRefreshSample": false,
+      "_refreshTrigger": 0
+    },
+    "exploreUIParams": {
+      "autoRefresh": true
+    },
+    "globalSearchQuery": "",
+    "explorationFilters": [
+      {
+        "column": "metricId",
+        "type": "columnFilter",
+        "currentMode": "SIMPLE_ALPHANUM",
+        "active": true,
+        "facet": {
+          "type": "facet",
+          "column": "metricId",
+          "columnType": "ALPHANUM",
+          "currentMode": "ALPHANUM",
+          "sort": "count",
+          "selectedValues": {}
+        },
+        "alphanumFilter": {
+          "type": "alphanum",
+          "column": "metricId",
+          "selectedValues": [
+            "python"
+          ],
+          "params": {
+            "mode": "substring",
+            "normalization": "exact"
+          }
+        },
+        "validityFilter": {
+          "type": "validity",
+          "column": "metricId",
+          "params": {
+            "type": "Text",
+            "ok": true,
+            "nok": true,
+            "empty": true
+          }
+        }
+      }
+    ],
+    "previewMode": "ALL_ROWS"
+  },
+  "charts": [],
+  "interactiveSearch": {
+    "savedQueries": []
+  },
+  "customMeasures": []
+}

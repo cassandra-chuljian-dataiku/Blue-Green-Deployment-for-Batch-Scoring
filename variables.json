@@ -1,0 +1,13 @@
+{
+  "BLUE_SM_ID": "tXLDWR2b",
+  "GREEN_SM_ID": "naPZZE1t",
+  "BLUE_MES_ID": "ARFVe8tZ",
+  "GREEN_MES_ID": "93Og89Gv",
+  "CHALLENGER_MODEL": "GREEN",
+  "CHALLENGER_SPLIT": 0,
+  "MODEL_STATUS": "DEPLOYED",
+  "logging_level": "DEBUG",
+  "emails": [
+    "pierre.petrella@dataiku.com"
+  ]
+}

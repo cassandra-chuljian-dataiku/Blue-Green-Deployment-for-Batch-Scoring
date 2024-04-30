@@ -1,0 +1,180 @@
+{
+  "script": {
+    "steps": [],
+    "maxProcessedMemTableBytes": -1,
+    "fullSampleStatistics": {
+      "engineConfig": {
+        "padRunsWithMetrics": false,
+        "hive": {
+          "active": true,
+          "extraConf": []
+        },
+        "basic": {},
+        "dss": {
+          "active": true,
+          "selection": {
+            "useMemTable": false,
+            "filter": {
+              "distinct": false,
+              "enabled": false
+            },
+            "partitionSelectionMethod": "ALL",
+            "latestPartitionsN": 1,
+            "ordering": {
+              "enabled": false,
+              "rules": []
+            },
+            "samplingMethod": "FULL",
+            "maxRecords": -1,
+            "targetRatio": 0.02,
+            "ascending": true,
+            "withinFirstN": -1,
+            "maxReadUncompressedBytes": -1
+          }
+        },
+        "sql": {
+          "active": true
+        },
+        "impala": {
+          "active": true
+        },
+        "spark": {
+          "active": true,
+          "extraConf": []
+        },
+        "python": {}
+      },
+      "basic": true,
+      "countDistinct": true,
+      "advanced": true,
+      "percentile": false,
+      "validity": false,
+      "updateOnAnalyzeBoxOpen": false,
+      "computeCostFreeMetrics": false,
+      "numberTopValues": 10
+    },
+    "columnsSelection": {
+      "mode": "ALL"
+    },
+    "columnWidthsByName": {
+      "TRANSACTION_DATE": 183,
+      "TRANSACTION_DESCRIPTION": 188,
+      "TRANSACTION_TIME": 135,
+      "DATE": 148,
+      "DATE_parsed": 183,
+      "INITIAL_PARTY_TYPE": 150,
+      "CHANNEL": 100,
+      "FLIGHT_BOOKING_REFERENCE": 195,
+      "BOOKING_TYPE_GROUP": 150,
+      "REVENUE_TYPE": 105,
+      "REVENUE_TYPE_DETAIL": 158,
+      "PRODUCT_TYPE_DESCRIPTION": 195,
+      "ROUTE_CATEGORY": 120,
+      "ONEWAYFLAG": 100,
+      "SEASON": 100,
+      "SEASON_TYPE": 100,
+      "DIRECTION": 113,
+      "BASE": 100,
+      "DESTINATION": 100,
+      "DESTINATION_MEMPHISREGION": 203,
+      "DESTINATION_COUNTRY": 158,
+      "PRODUCTGROUPNAME": 135,
+      "DURATION_BANDED": 128,
+      "FLIGHT_ONLY_TRANSACTION_KEY": 218,
+      "FLIGHT_PRODUCT_KEY": 150,
+      "REVENUE": 134,
+      "NET_PRODUCT_COUNT": 143,
+      "PRICE": 134,
+      "LEAD_TIME_DAYS": 134,
+      "TRAVELDURATION": 134,
+      "PASSENGERS_ACCUMULATED": 180,
+      "RETAILREVENUE_ACCUMULATED": 203,
+      "RETAILTYPEREVENUE_ACCUMULATED": 233,
+      "DEPARTUREDOW": 134,
+      "DEPARTUREMONTH": 134,
+      "DESTINATION_LATITUDE": 165,
+      "DESTINATION_LONGITUDE": 173,
+      "CAPACITY": 134,
+      "RANK1_PRICE": 100,
+      "RANKMAX_PRICE": 113,
+      "GROSSTICKETREVENUE_ACCUMULATED": 240,
+      "PROFIT_PER_PASSENGERS": 173,
+      "REMAINING_SEATS": 134,
+      "LOAD_FACTOR": 134,
+      "ROUTE_LENGTH_KM": 134,
+      "PPPratio": 134,
+      "RECENT_REVENUE": 134,
+      "XLG_SEAT_COUNT": 134,
+      "XLG_LOAD_FACTOR": 134,
+      "PRICE_RANK": 100,
+      "ID": 100
+    },
+    "columnUseScientificNotationByName": {},
+    "coloring": {
+      "scheme": "MEANING_AND_STATUS",
+      "individualColumns": [],
+      "valueColoringMode": "HASH"
+    },
+    "sorting": [],
+    "analysisColumnData": {},
+    "explorationSampling": {
+      "selection": {
+        "maxRecordsForDisplay": -1,
+        "maxStoredBytes": 104857600,
+        "timeout": -1,
+        "filter": {
+          "distinct": false,
+          "enabled": false
+        },
+        "partitionSelectionMethod": "ALL",
+        "latestPartitionsN": 1,
+        "ordering": {
+          "enabled": false,
+          "rules": []
+        },
+        "samplingMethod": "HEAD_SEQUENTIAL",
+        "maxRecords": 10000,
+        "targetRatio": 0.02,
+        "ascending": true,
+        "withinFirstN": -1,
+        "maxReadUncompressedBytes": -1
+      },
+      "autoRefreshSample": false,
+      "_refreshTrigger": 0
+    },
+    "vizSampling": {
+      "selection": {
+        "useMemTable": false,
+        "filter": {
+          "distinct": false,
+          "enabled": false
+        },
+        "partitionSelectionMethod": "ALL",
+        "latestPartitionsN": 1,
+        "ordering": {
+          "enabled": false,
+          "rules": []
+        },
+        "samplingMethod": "FULL",
+        "maxRecords": -1,
+        "targetRatio": 0.02,
+        "ascending": true,
+        "withinFirstN": -1,
+        "maxReadUncompressedBytes": -1
+      },
+      "autoRefreshSample": false,
+      "_refreshTrigger": 0
+    },
+    "exploreUIParams": {
+      "autoRefresh": true
+    },
+    "globalSearchQuery": "",
+    "explorationFilters": [],
+    "previewMode": "ALL_ROWS"
+  },
+  "charts": [],
+  "interactiveSearch": {
+    "savedQueries": []
+  },
+  "customMeasures": []
+}

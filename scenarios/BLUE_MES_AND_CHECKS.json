@@ -1,0 +1,81 @@
+{
+  "type": "step_based",
+  "name": "BLUE_MES_AND_CHECKS",
+  "active": false,
+  "runAsUser": "cassandra.chuljian@dataiku.com",
+  "checklists": {
+    "checklists": []
+  },
+  "delayedTriggersBehavior": {
+    "delayWhileRunning": true,
+    "squashDelayedTriggers": true,
+    "suppressTriggersWhileRunning": true
+  },
+  "tags": [
+    "helper_scenario"
+  ],
+  "triggers": [],
+  "reporters": [],
+  "params": {
+    "steps": [
+      {
+        "id": "build_0_true_e_ARFVe8tZ",
+        "type": "build_flowitem",
+        "name": "BLUE MES",
+        "runConditionType": "RUN_IF_STATUS_MATCH",
+        "runConditionStatuses": [
+          "SUCCESS",
+          "WARNING"
+        ],
+        "runConditionExpression": "",
+        "resetScenarioStatus": false,
+        "delayBetweenRetries": 10,
+        "maxRetriesOnFail": 0,
+        "params": {
+          "builds": [
+            {
+              "type": "MODEL_EVALUATION_STORE",
+              "itemId": "ARFVe8tZ",
+              "partitionsSpec": ""
+            }
+          ],
+          "jobType": "NON_RECURSIVE_FORCED_BUILD",
+          "autoUpdateSchemaBeforeEachRecipeRun": false,
+          "stopAtFlowZoneBoundary": false,
+          "refreshHiveMetastore": true,
+          "handleWarningsAs": "WARNING",
+          "proceedOnFailure": false
+        }
+      },
+      {
+        "id": "check_WARNING_e_ARFVe8tZ",
+        "type": "check_dataset",
+        "name": "BLUE MES",
+        "runConditionType": "RUN_IF_STATUS_MATCH",
+        "runConditionStatuses": [
+          "SUCCESS",
+          "WARNING"
+        ],
+        "runConditionExpression": "",
+        "resetScenarioStatus": false,
+        "delayBetweenRetries": 10,
+        "maxRetriesOnFail": 0,
+        "params": {
+          "checks": [
+            {
+              "type": "MODEL_EVALUATION_STORE",
+              "itemId": "ARFVe8tZ",
+              "partitionsSpec": ""
+            }
+          ],
+          "handleWarningsAs": "WARNING",
+          "computeAutomaticRules": true,
+          "ignorePartitionSelectionMode": true,
+          "proceedOnFailure": true
+        }
+      }
+    ]
+  },
+  "automationLocal": false,
+  "customFields": {}
+}

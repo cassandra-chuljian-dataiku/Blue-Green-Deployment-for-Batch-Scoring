@@ -1,0 +1,99 @@
+{
+  "type": "dataset_table",
+  "params": {
+    "datasetSmartName": "champion_predictions",
+    "shakerScript": {
+      "steps": [],
+      "maxProcessedMemTableBytes": -1,
+      "columnsSelection": {
+        "mode": "ALL"
+      },
+      "columnWidthsByName": {},
+      "columnUseScientificNotationByName": {},
+      "coloring": {
+        "scheme": "MEANING_AND_STATUS",
+        "individualColumns": [],
+        "valueColoringMode": "HASH"
+      },
+      "sorting": [],
+      "analysisColumnData": {},
+      "explorationSampling": {
+        "selection": {
+          "maxRecordsForDisplay": -1,
+          "maxStoredBytes": -1,
+          "timeout": -1,
+          "filter": {
+            "distinct": false,
+            "enabled": false
+          },
+          "partitionSelectionMethod": "ALL",
+          "latestPartitionsN": 1,
+          "ordering": {
+            "enabled": false,
+            "rules": []
+          },
+          "samplingMethod": "HEAD_SEQUENTIAL",
+          "maxRecords": 10000,
+          "targetRatio": 0.02,
+          "ascending": true,
+          "withinFirstN": -1,
+          "maxReadUncompressedBytes": -1
+        },
+        "autoRefreshSample": false,
+        "_refreshTrigger": 0
+      },
+      "vizSampling": {
+        "selection": {
+          "useMemTable": false,
+          "filter": {
+            "distinct": false,
+            "enabled": false
+          },
+          "partitionSelectionMethod": "ALL",
+          "latestPartitionsN": 1,
+          "ordering": {
+            "enabled": false,
+            "rules": []
+          },
+          "samplingMethod": "FULL",
+          "maxRecords": -1,
+          "targetRatio": 0.02,
+          "ascending": true,
+          "withinFirstN": -1,
+          "maxReadUncompressedBytes": -1
+        },
+        "autoRefreshSample": false,
+        "_refreshTrigger": 0
+      },
+      "exploreUIParams": {},
+      "globalSearchQuery": "",
+      "explorationFilters": [],
+      "previewMode": "ALL_ROWS"
+    }
+  },
+  "owner": "pierre.petrella",
+  "listed": false,
+  "name": "champion_predictions",
+  "dashboardCreationId": "rES7f1H",
+  "versionTag": {
+    "versionNumber": 0,
+    "lastModifiedBy": {
+      "login": "pierre.petrella"
+    },
+    "lastModifiedOn": 1702483284820,
+    "extendedProperties": {}
+  },
+  "creationTag": {
+    "versionNumber": 0,
+    "lastModifiedBy": {
+      "login": "pierre.petrella"
+    },
+    "lastModifiedOn": 1702483284820,
+    "extendedProperties": {}
+  },
+  "tags": [],
+  "customFields": {},
+  "checklists": {
+    "checklists": []
+  }
+}

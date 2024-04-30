@@ -1,0 +1,44 @@
+{
+  "name": "Score and prepare predictions",
+  "color": "#4B8021",
+  "items": [
+    {
+      "objectId": "score_recent_data",
+      "objectType": "RECIPE"
+    },
+    {
+      "objectId": "score_recent_data_1",
+      "objectType": "RECIPE"
+    },
+    {
+      "objectId": "GREEN_SCORED",
+      "objectType": "DATASET"
+    },
+    {
+      "objectId": "BLUE_SCORED",
+      "objectType": "DATASET"
+    },
+    {
+      "objectId": "compute_GREEN_SCORED_joined",
+      "objectType": "RECIPE"
+    },
+    {
+      "objectId": "champion_challenger_score",
+      "objectType": "DATASET"
+    },
+    {
+      "objectId": "compute_predicted_prices",
+      "objectType": "RECIPE"
+    },
+    {
+      "objectId": "predicted_prices",
+      "objectType": "DATASET"
+    }
+  ],
+  "shared": [],
+  "tags": [],
+  "customFields": {},
+  "checklists": {
+    "checklists": []
+  }
+}

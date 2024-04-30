@@ -1,0 +1,29 @@
+{
+  "tags": {
+    "Technical Dimension:CI/CD": {},
+    "Technical Dimension:o16n": {},
+    "Business Function:Data": {},
+    "Technical Dimension:Version control": {},
+    "Asset:Customer AI Project": {},
+    "Business Function:Other": {},
+    "Technical Dimension:Scenarios": {},
+    "Use-case Domain:Pricing": {},
+    "duplicated": {
+      "color": "#3A85AD"
+    },
+    "Use-case Domain:Budgeting and cash allocation optimization": {},
+    "Technical Dimension:Code Recipes": {},
+    "Technical Dimension:ML with code": {},
+    "Industry:CPG": {},
+    "Technical Dimension:Python in DSS": {},
+    "imported": {
+      "color": "#263238"
+    },
+    "Technical Dimension:Collaboration": {},
+    "time_based": {},
+    "Technical Dimension:MLOps": {},
+    "helper_scenario": {},
+    "Technical Dimension:Visual ML": {},
+    "Industry:Transportation \u0026 Logistics": {}
+  }
+}

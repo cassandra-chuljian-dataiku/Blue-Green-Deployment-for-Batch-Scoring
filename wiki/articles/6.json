@@ -1,0 +1,26 @@
+{
+  "name": "Variables",
+  "layout": "WIKI_ARTICLE",
+  "attachments": [],
+  "versionTag": {
+    "versionNumber": 1,
+    "lastModifiedBy": {
+      "login": "pierre.petrella"
+    },
+    "lastModifiedOn": 1702887021791,
+    "extendedProperties": {}
+  },
+  "creationTag": {
+    "versionNumber": 0,
+    "lastModifiedBy": {
+      "login": "pierre.petrella"
+    },
+    "lastModifiedOn": 1702886803846,
+    "extendedProperties": {}
+  },
+  "tags": [],
+  "customFields": {},
+  "checklists": {
+    "checklists": []
+  }
+}

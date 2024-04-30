@@ -1,0 +1,44 @@
+{
+  "name": "Challenger \u0026 Champion Evaluation",
+  "color": "#C82423",
+  "items": [
+    {
+      "objectId": "93Og89Gv",
+      "objectType": "MODEL_EVALUATION_STORE"
+    },
+    {
+      "objectId": "ARFVe8tZ",
+      "objectType": "MODEL_EVALUATION_STORE"
+    },
+    {
+      "objectId": "evaluate_on_new_data_1",
+      "objectType": "RECIPE"
+    },
+    {
+      "objectId": "evaluate_on_new_data",
+      "objectType": "RECIPE"
+    },
+    {
+      "objectId": "BLUE_sm_eval_dataset",
+      "objectType": "DATASET"
+    },
+    {
+      "objectId": "GREEN_sm_eval_dataset",
+      "objectType": "DATASET"
+    },
+    {
+      "objectId": "new_data_scored",
+      "objectType": "DATASET"
+    },
+    {
+      "objectId": "score_new_data",
+      "objectType": "RECIPE"
+    }
+  ],
+  "shared": [],
+  "tags": [],
+  "customFields": {},
+  "checklists": {
+    "checklists": []
+  }
+}

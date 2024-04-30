@@ -1,0 +1,32 @@
+{
+  "name": "R2 Calculations on daily scored data",
+  "color": "#8C2DA7",
+  "items": [
+    {
+      "objectId": "champion_predictions",
+      "objectType": "DATASET"
+    },
+    {
+      "objectId": "challenger_predictions",
+      "objectType": "DATASET"
+    },
+    {
+      "objectId": "split_predicted_prices",
+      "objectType": "RECIPE"
+    },
+    {
+      "objectId": "champion_predictions_metrics",
+      "objectType": "DATASET"
+    },
+    {
+      "objectId": "challenger_predictions_metrics",
+      "objectType": "DATASET"
+    }
+  ],
+  "shared": [],
+  "tags": [],
+  "customFields": {},
+  "checklists": {
+    "checklists": []
+  }
+}

@@ -1,0 +1,327 @@
+{
+  "type": "Filesystem",
+  "managed": true,
+  "featureGroup": false,
+  "formatType": "csv",
+  "checklists": {
+    "checklists": []
+  },
+  "checks": [],
+  "customMeta": {
+    "kv": {}
+  },
+  "flowOptions": {
+    "virtualizable": false,
+    "rebuildBehavior": "NORMAL",
+    "crossProjectBuildBehavior": "DEFAULT"
+  },
+  "readWriteOptions": {
+    "preserveOrder": false,
+    "writeBuckets": 1,
+    "forceSingleOutputFile": false,
+    "defaultReadOrdering": {
+      "enabled": false,
+      "rules": []
+    }
+  },
+  "formatParams": {
+    "style": "unix",
+    "charset": "utf8",
+    "separator": "\t",
+    "quoteChar": "\"",
+    "escapeChar": "\\",
+    "maxRowChars": 100000000,
+    "dateSerializationFormat": "ISO",
+    "arrayMapFormat": "json",
+    "hiveSeparators": [
+      "\u0002",
+      "\u0003",
+      "\u0004",
+      "\u0005",
+      "\u0006",
+      "\u0007",
+      "\b"
+    ],
+    "skipRowsBeforeHeader": 0,
+    "parseHeaderRow": false,
+    "skipRowsAfterHeader": 0,
+    "probableNumberOfRecords": 0,
+    "normalizeBooleans": false,
+    "normalizeDoubles": true,
+    "readAdditionalColumnsBehavior": "INSERT_IN_DATA_WARNING",
+    "readMissingColumnsBehavior": "DISCARD_SILENT",
+    "readDataTypeMismatchBehavior": "DISCARD_WARNING",
+    "writeDataTypeMismatchBehavior": "DISCARD_WARNING",
+    "fileReadFailureBehavior": "FAIL",
+    "compress": "gz"
+  },
+  "partitioning": {
+    "ignoreNonMatchingFile": false,
+    "considerMissingRequestedPartitionsAsEmpty": false,
+    "dimensions": []
+  },
+  "creationTag": {
+    "versionNumber": 0,
+    "lastModifiedBy": {
+      "login": "pierre.petrella"
+    },
+    "lastModifiedOn": 1702484007417,
+    "extendedProperties": {}
+  },
+  "tags": [],
+  "params": {
+    "connection": "filesystem_managed",
+    "path": "/DATAIKU_RDP_PROJECTGALLERY.BLUE_sm_eval_dataset_with_prices",
+    "notReadyIfEmpty": false,
+    "filesSelectionRules": {
+      "mode": "ALL",
+      "excludeRules": [],
+      "includeRules": [],
+      "explicitFiles": []
+    }
+  },
+  "schema": {
+    "columns": [
+      {"name":"TRANSACTION_DATE","type":"date"},
+      {"name":"TRANSACTION_DESCRIPTION","type":"string"},
+      {"name":"TRANSACTION_TIME","type":"string"},
+      {"name":"DATE","type":"string"},
+      {"name":"DATE_parsed","type":"date"},
+      {"name":"INITIAL_PARTY_TYPE","type":"string"},
+      {"name":"CHANNEL","type":"string"},
+      {"name":"FLIGHT_BOOKING_REFERENCE","type":"string"},
+      {"name":"BOOKING_TYPE_GROUP","type":"string"},
+      {"name":"REVENUE_TYPE","type":"string"},
+      {"name":"REVENUE_TYPE_DETAIL","type":"string"},
+      {"name":"PRODUCT_TYPE_DESCRIPTION","type":"string"},
+      {"name":"ROUTE_CATEGORY","type":"string"},
+      {"name":"ONEWAYFLAG","type":"boolean"},
+      {"name":"SEASON","type":"string"},
+      {"name":"SEASON_TYPE","type":"string"},
+      {"name":"DIRECTION","type":"string"},
+      {"name":"BASE","type":"string"},
+      {"name":"DESTINATION","type":"string"},
+      {"name":"DESTINATION_MEMPHISREGION","type":"string"},
+      {"name":"DESTINATION_COUNTRY","type":"string"},
+      {"name":"PRODUCTGROUPNAME","type":"string"},
+      {"name":"DURATION_BANDED","type":"string"},
+      {"name":"FLIGHT_ONLY_TRANSACTION_KEY","type":"double"},
+      {"name":"FLIGHT_PRODUCT_KEY","type":"double"},
+      {"name":"REVENUE","type":"double"},
+      {"name":"NET_PRODUCT_COUNT","type":"double"},
+      {"name":"PRICE","type":"double"},
+      {"name":"LEAD_TIME_DAYS","type":"double"},
+      {"name":"TRAVELDURATION","type":"double"},
+      {"name":"PASSENGERS_ACCUMULATED","type":"double"},
+      {"name":"RETAILREVENUE_ACCUMULATED","type":"double"},
+      {"name":"RETAILTYPEREVENUE_ACCUMULATED","type":"double"},
+      {"name":"DEPARTUREDOW","type":"double"},
+      {"name":"DEPARTUREMONTH","type":"double"},
+      {"name":"DESTINATION_LATITUDE","type":"double"},
+      {"name":"DESTINATION_LONGITUDE","type":"double"},
+      {"name":"CAPACITY","type":"double"},
+      {"name":"RANK1_PRICE","type":"bigint"},
+      {"name":"RANKMAX_PRICE","type":"bigint"},
+      {"name":"GROSSTICKETREVENUE_ACCUMULATED","type":"double"},
+      {"name":"PROFIT_PER_PASSENGERS","type":"double"},
+      {"name":"REMAINING_SEATS","type":"double"},
+      {"name":"LOAD_FACTOR","type":"double"},
+      {"name":"ROUTE_LENGTH_KM","type":"double"},
+      {"name":"PPPratio","type":"double"},
+      {"name":"RECENT_REVENUE","type":"double"},
+      {"name":"XLG_SEAT_COUNT","type":"double"},
+      {"name":"XLG_LOAD_FACTOR","type":"double"},
+      {"name":"PRICE_RANK","type":"bigint"},
+      {"name":"gt_price","type":"double"},
+      {"name":"ID","type":"bigint"},
+      {"name":"proba_8","type":"double"},
+      {"name":"proba_9","type":"double"},
+      {"name":"proba_7","type":"double"},
+      {"name":"proba_10","type":"double"},
+      {"name":"proba_6","type":"double"},
+      {"name":"proba_5","type":"double"},
+      {"name":"proba_4","type":"double"},
+      {"name":"proba_3","type":"double"},
+      {"name":"proba_1","type":"double"},
+      {"name":"prediction","type":"string"},
+      {"name":"predicted_price","type":"double"},
+      {"name":"prediction_correct","type":"boolean"}
+    ],
+    "userModified": true
+  },
+  "dkuProperties": [],
+  "metrics": {
+    "probes": [
+      {
+        "type": "basic",
+        "enabled": true,
+        "computeOnBuildMode": "PARTITION",
+        "meta": {
+          "name": "Basic data",
+          "level": 0
+        },
+        "configuration": {}
+      },
+      {
+        "type": "records",
+        "enabled": true,
+        "computeOnBuildMode": "NO",
+        "meta": {
+          "name": "Record count",
+          "level": 0
+        },
+        "configuration": {}
+      },
+      {
+        "type": "col_stats",
+        "enabled": false,
+        "computeOnBuildMode": "NO",
+        "meta": {
+          "name": "Columns statistics",
+          "level": 2
+        },
+        "configuration": {
+          "aggregates": []
+        }
+      },
+      {
+        "type": "adv_col_stats",
+        "enabled": false,
+        "computeOnBuildMode": "NO",
+        "meta": {
+          "name": "Most frequent values",
+          "level": 3
+        },
+        "configuration": {
+          "aggregates": [],
+          "numberTopValues": 10
+        }
+      },
+      {
+        "type": "percentile_stats",
+        "enabled": false,
+        "computeOnBuildMode": "NO",
+        "meta": {
+          "name": "Columns percentiles",
+          "level": 4
+        },
+        "configuration": {
+          "aggregates": []
+        }
+      },
+      {
+        "type": "verify_col",
+        "enabled": false,
+        "computeOnBuildMode": "NO",
+        "meta": {
+          "name": "Data validity",
+          "level": 4
+        },
+        "configuration": {
+          "aggregates": []
+        }
+      },
+      {
+        "type": "python",
+        "enabled": true,
+        "computeOnBuildMode": "NO",
+        "meta": {
+          "name": "Custom Model Metrics",
+          "level": 8
+        },
+        "configuration": {
+          "code": "# Define here a function that returns the metric.\nfrom sklearn.metrics import r2_score\ndef process(dataset, partition_id):\n    # dataset is a dataiku.Dataset object\n    df \u003d dataset.get_dataframe()\n    y_true \u003d df[\"gt_price\"]\n    y_pred \u003d df[\"predicted_price\"]\n    r2 \u003d r2_score(y_true, y_pred)\n    return {\u0027R2\u0027 : r2}",
+          "envSelection": {
+            "envMode": "INHERIT"
+          }
+        }
+      }
+    ],
+    "engineConfig": {
+      "padRunsWithMetrics": false,
+      "hive": {
+        "active": true,
+        "extraConf": []
+      },
+      "basic": {},
+      "dss": {
+        "active": true,
+        "selection": {
+          "useMemTable": false,
+          "filter": {
+            "distinct": false,
+            "enabled": false
+          },
+          "partitionSelectionMethod": "ALL",
+          "latestPartitionsN": 1,
+          "ordering": {
+            "enabled": false,
+            "rules": []
+          },
+          "samplingMethod": "FULL",
+          "maxRecords": -1,
+          "targetRatio": 0.02,
+          "ascending": true,
+          "withinFirstN": -1,
+          "maxReadUncompressedBytes": -1
+        }
+      },
+      "sql": {
+        "active": true
+      },
+      "impala": {
+        "active": true
+      },
+      "spark": {
+        "active": true,
+        "extraConf": []
+      },
+      "python": {}
+    },
+    "displayedState": {
+      "partition": "NP",
+      "columns": [],
+      "metrics": [
+        "basic:COUNT_COLUMNS",
+        "basic:COUNT_FILES",
+        "basic:SIZE",
+        "records:COUNT_RECORDS",
+        "python:R2:Custom Model Metrics"
+      ]
+    }
+  },
+  "metricsChecks": {
+    "monitor": true,
+    "checks": [
+      {
+        "type": "numericRange",
+        "minimum": 0.5,
+        "maximum": 0.0,
+        "softMinimum": 0.7,
+        "softMaximum": 0.0,
+        "minimumEnabled": true,
+        "maximumEnabled": false,
+        "softMinimumEnabled": true,
+        "softMaximumEnabled": false,
+        "metricId": "python:R2:Custom Model Metrics",
+        "autoComputeMetric": false,
+        "meta": {
+          "name": "Value in range",
+          "label": "Check Blue R2"
+        },
+        "id": "Check Blue R2",
+        "displayName": "Check Blue R2",
+        "computeOnBuildMode": "PARTITION",
+        "autoRun": false,
+        "enabled": true
+      }
+    ],
+    "displayedState": {
+      "partition": "NP",
+      "checks": [
+        "Check Blue R2"
+      ]
+    }
+  },
+  "customFields": {}
+}

@@ -1,0 +1,74 @@
+{
+  "type": "step_based",
+  "name": "run_pricing_model",
+  "active": false,
+  "runAsUser": "cassandra.chuljian@dataiku.com",
+  "checklists": {
+    "checklists": []
+  },
+  "delayedTriggersBehavior": {
+    "delayWhileRunning": true,
+    "squashDelayedTriggers": true,
+    "suppressTriggersWhileRunning": true
+  },
+  "tags": [
+    "time_based"
+  ],
+  "triggers": [
+    {
+      "id": "Y3gz4qeh",
+      "type": "temporal",
+      "name": "Daily morning scoring",
+      "delay": 5,
+      "active": true,
+      "params": {
+        "repeatFrequency": 1,
+        "frequency": "Daily",
+        "startingFrom": "2023-11-22",
+        "daysOfWeek": [
+          "Wednesday"
+        ],
+        "minute": 0,
+        "hour": 7,
+        "timezone": "SERVER",
+        "lastUpdate": 1700671761412
+      }
+    }
+  ],
+  "reporters": [],
+  "params": {
+    "steps": [
+      {
+        "id": "build_0_true_d_predicted_prices",
+        "type": "build_flowitem",
+        "name": "Step #1",
+        "runConditionType": "RUN_IF_STATUS_MATCH",
+        "runConditionStatuses": [
+          "SUCCESS",
+          "WARNING"
+        ],
+        "runConditionExpression": "",
+        "resetScenarioStatus": false,
+        "delayBetweenRetries": 10,
+        "maxRetriesOnFail": 0,
+        "params": {
+          "builds": [
+            {
+              "type": "DATASET",
+              "itemId": "records_to_score",
+              "partitionsSpec": ""
+            }
+          ],
+          "jobType": "REVERSE_FORCED_BUILD",
+          "autoUpdateSchemaBeforeEachRecipeRun": false,
+          "stopAtFlowZoneBoundary": false,
+          "refreshHiveMetastore": true,
+          "handleWarningsAs": "WARNING",
+          "proceedOnFailure": false
+        }
+      }
+    ]
+  },
+  "automationLocal": false,
+  "customFields": {}
+}

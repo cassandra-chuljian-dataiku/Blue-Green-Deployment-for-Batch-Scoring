@@ -1,0 +1,36 @@
+{
+  "name": "R2 Calculation on eval dataset",
+  "color": "#8C2DA7",
+  "items": [
+    {
+      "objectId": "compute_green_sm_eval_dataset_with_prices",
+      "objectType": "RECIPE"
+    },
+    {
+      "objectId": "compute_blue_sm_eval_dataset_with_prices",
+      "objectType": "RECIPE"
+    },
+    {
+      "objectId": "GREEN_sm_eval_dataset_with_prices",
+      "objectType": "DATASET"
+    },
+    {
+      "objectId": "BLUE_sm_eval_dataset_with_prices",
+      "objectType": "DATASET"
+    },
+    {
+      "objectId": "GREEN_sm_eval_dataset_with_prices_metrics",
+      "objectType": "DATASET"
+    },
+    {
+      "objectId": "BLUE_sm_eval_dataset_with_prices_metrics",
+      "objectType": "DATASET"
+    }
+  ],
+  "shared": [],
+  "tags": [],
+  "customFields": {},
+  "checklists": {
+    "checklists": []
+  }
+}
